@@ -1,0 +1,1658 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link media="Screen" href="styles.css" type="text/css" rel="stylesheet" />-->
+    <link media="handheld, only screen and (max-width:480px), only screen and (max-device-width:480px)" href="css/mobile.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/form-app.css" />
+    <link rel="stylesheet" href="css/govscore.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>Govscore</title>
+    
+</head>
+<body>
+
+<!-- How-To Page -->
+    <div data-role="page" id="how-to" data-title="How-To" data-theme="f">
+
+        <div data-role="header">
+            <h1>How To</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <article>
+                
+                <p>Risus vel, phasellus lectus vut, quis phasellus, et placerat magnis odio augue ac tincidunt non, sociis in pulvinar, facilisis rhoncus lectus ut ultrices elementum, porta parturient sit. Ac, tempor nascetur, cum lacus a, amet tortor sed, rhoncus ultricies, porttitor! Rhoncus tempor integer? Magna a, ultrices? Aliquam? Odio odio nec tristique mid eros? Pid et penatibus hac in, duis aliquet, lundium. Et eros adipiscing, adipiscing aenean amet urna amet, magna duis aliquam in augue tristique urna ac nascetur, rhoncus penatibus massa. Dictumst velit porta dolor? Pulvinar, dictumst hac dapibus augue proin rhoncus enim dolor tincidunt, risus tristique ultrices parturient integer, porta aenean porttitor sagittis ultrices diam. Natoque placerat ut hac, massa placerat in, mattis magna et penatibus tristique placerat velit urna.</p>
+                <p>Sed mauris massa auctor adipiscing, nec integer mattis tempor et cum, augue auctor natoque, lundium et aliquam duis nunb. Non quis eros turpis aliquet lundium eu sociis! Ridiculus a ut mauris? Magnis, turpis tristique odio? Diam nisi penatibus dis velit eu. A sociis? Vel? Purus enim facilisis, integer a aliquam purus urna in enim elit dolor nec diam augue lacus nisi augue sed? Magna ultrices egestas tristique nascetur risus sed odio dolor mus urna? Eros, ultricies in? Mauris, in, est rhoncus in, magna, lundium! Penatibus lorem nunc, odio purus! Proin augue, tincidunt scelerisque platea platea! Dis mus turpis placerat, in urna scelerisque mattis! Vel! Porttitor hac sociis, nec nunc phasellus urna aliquet pid, tempor cursus. Tristique dignissim cum eu.</p>
+            </article>
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to" class="ui-btn-active ui-state-persist">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+<!-- Govscore page -->
+    <div data-role="page" id="govscore" data-title="Govscore" data-theme="c">
+
+        <div data-role="header">
+            <h1>Govscore</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <article>
+                <a href="#govscore-results" id="govscore-results2" class="ui-btn">See Your Results</a>
+                <form name="gsForm"> 
+                    <label for="name" class="ui-hidden-accessible">Name</label>
+                        <input type="text" id="name" name="name" placeholder="First name followed by surname" required />
+
+                    <label for="email" class="ui-hidden-accessible">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required />
+
+                    <label for="organization" class="select ui-hidden-accessible">Organization</label>
+                        <select name="organization" id="organization">
+                            <option value="-1">Select Your Organization</option>
+                            <option value="1111">First Organization</option>
+                            <option value="2222">Second Organization</option>
+                            <option value="3333">Third Organization</option>
+                            <option value="4444">Fourth Organization</option>
+                        </select>
+
+                    <br />
+                    
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>1. The governing body has a clear understanding of its purpose and role.</legend>
+                            <input type="radio" name="question1" id="1none" value="0" checked="checked">
+                            <label for="1none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question1" id="1minimally" value="1">
+                            <label for="1minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question1" id="1partly" value="2">
+                            <label for="1partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question1" id="1mostly" value="3">
+                            <label for="1mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question1" id="1completely" value="4">
+                            <label for="1completely"><img src="img/full.png" /></label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>2. Members of the governing body have a clear understanding of their precise governance responsibilities.</legend>
+                            <input type="radio" name="question2" id="2none" value="0" checked="checked">
+                            <label for="2none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question2" id="2minimally" value="1">
+                            <label for="2minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question2" id="2partly" value="2">
+                            <label for="2partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question2" id="2mostly" value="3">
+                            <label for="2mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question2" id="2completely" value="4">
+                            <label for="2completely"><img src="img/full.png" /></label>
+                    </fieldset>
+                    <br /> 
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>3. The governing body monitors the organization’s financial performance compared to financial goals set by the governing body.</legend>
+                            <input type="radio" name="question3" id="3none" value="0" checked="checked">
+                            <label for="3none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question3" id="3minimally" value="1">
+                            <label for="3minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question3" id="3partly" value="2">
+                            <label for="3partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question3" id="3mostly" value="3">
+                            <label for="3mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question3" id="3completely" value="4">
+                            <label for="3completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>4. Governing body members are required to complete a conflict-of-interest / confidentiality disclosure statement annually.</legend>
+                            <input type="radio" name="question4" id="4none" value="0" checked="checked">
+                            <label for="4none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question4" id="4minimally" value="1">
+                            <label for="4minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question4" id="4partly" value="2">
+                            <label for="4partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question4" id="4mostly" value="3">
+                            <label for="4mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question4" id="4completely" value="4">
+                            <label for="4completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>5. As a whole, our governing body communicates effectively with the Managing Director / Chief Executive.</legend>
+                            <input type="radio" name="question5" id="5none" value="0" checked="checked">
+                            <label for="5none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question5" id="5minimally" value="1">
+                            <label for="5minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question5" id="5partly" value="2">
+                            <label for="5partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question5" id="5mostly" value="3">
+                            <label for="5mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question5" id="5completely" value="4">
+                            <label for="5completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>6. The governing body is actively involved in establishing the organization’s strategic direction (e.g., creating a longer-range vision, setting priorities, and developing / approving the strategic plan).</legend>
+                            <input type="radio" name="question6" id="6none" value="0" checked="checked">
+                            <label for="6none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question6" id="6minimally" value="1">
+                            <label for="6minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question6" id="6partly" value="2">
+                            <label for="6partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question6" id="6mostly" value="3">
+                            <label for="6mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question6" id="6completely" value="4">
+                            <label for="6completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>7. Governing body members strive to represent the healthcare needs of the organization’s target population groups.</legend>
+                            <input type="radio" name="question7" id="7none" value="0" checked="checked">
+                            <label for="7none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question7" id="7minimally" value="1">
+                            <label for="7minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question7" id="7partly" value="2">
+                            <label for="7partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question7" id="7mostly" value="3">
+                            <label for="7mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question7" id="7completely" value="4">
+                            <label for="7completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>8. Governing body members make attendance at governing body meetings a high priority and attend most meetings fully prepared to discuss and decide the items on the agenda.</legend>
+                            <input type="radio" name="question8" id="8none" value="0" checked="checked">
+                            <label for="8none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question8" id="8minimally" value="1">
+                            <label for="8minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question8" id="8partly" value="2">
+                            <label for="8partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question8" id="8mostly" value="3">
+                            <label for="8mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question8" id="8completely" value="4">
+                            <label for="8completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>9. The governing body makes good use of time available during governing body meetings to perform its duties.</legend>
+                            <input type="radio" name="question9" id="9none" value="0" checked="checked">
+                            <label for="9none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question9" id="9minimally" value="1">
+                            <label for="9minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question9" id="9partly" value="2">
+                            <label for="9partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question9" id="9mostly" value="3">
+                            <label for="9mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question9" id="9completely" value="4">
+                            <label for="9completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                   <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>10. The governing body regularly reviews the organization’s quality and patient safety scores / results.</legend>
+                            <input type="radio" name="question10" id="10none" value="0" checked="checked">
+                            <label for="10none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question10" id="10minimally" value="1">
+                            <label for="10minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question10" id="10partly" value="2">
+                            <label for="10partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question10" id="10mostly" value="3">
+                            <label for="10mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question10" id="10completely" value="4">
+                            <label for="10completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>11. Governing body members recognize the differences between the governing body's role and management's role.</legend>
+                            <input type="radio" name="question11" id="11none" value="0" checked="checked">
+                            <label for="11none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question11" id="11minimally" value="1">
+                            <label for="11minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question11" id="11partly" value="2">
+                            <label for="11partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question11" id="11mostly" value="3">
+                            <label for="11mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question11" id="11completely" value="4">
+                            <label for="11completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>12. The governing body requires that all plans in the organization (e.g., financial, capital, operational, quality improvement) be aligned with the organization’s overall strategic plan / direction.</legend>
+                            <input type="radio" name="question12" id="12none" value="0" checked="checked">
+                            <label for="12none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question12" id="12minimally" value="1">
+                            <label for="12minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question12" id="12partly" value="2">
+                            <label for="12partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question12" id="12mostly" value="3">
+                            <label for="12mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question12" id="12completely" value="4">
+                            <label for="12completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>13. The governing body requires management to keep the governing body informed on potential or current legal issues important to the organization.</legend>
+                            <input type="radio" name="question13" id="13none" value="0" checked="checked">
+                            <label for="13none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question13" id="13minimally" value="1">
+                            <label for="13minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question13" id="13partly" value="2">
+                            <label for="13partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question13" id="13mostly" value="3">
+                            <label for="13mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question13" id="13completely" value="4">
+                            <label for="13completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>14. Governing body communicates effectively with key external stakeholders.</legend>
+                            <input type="radio" name="question14" id="14none" value="0" checked="checked">
+                            <label for="14none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question14" id="14minimally" value="1">
+                            <label for="14minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question14" id="14partly" value="2">
+                            <label for="14partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question14" id="14mostly" value="3">
+                            <label for="14mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question14" id="14completely" value="4">
+                            <label for="14completely"><img src="img/full.png" /></label>
+                    </fieldset>
+                    <br /> 
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>15. New governing body members participate in a governance orientation program.</legend>
+                            <input type="radio" name="question15" id="15none" value="0" checked="checked">
+                            <label for="15none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question15" id="15minimally" value="1">
+                            <label for="15minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question15" id="15partly" value="2">
+                            <label for="15partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question15" id="15mostly" value="3">
+                            <label for="15mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question15" id="15completely" value="4">
+                            <label for="15completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>16. The governing body examines how the organization’s strategic plan addresses community health status / needs before approving the plan.</legend>
+                            <input type="radio" name="question16" id="16none" value="0" checked="checked">
+                            <label for="16none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question16" id="16minimally" value="1">
+                            <label for="16minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question16" id="16partly" value="2">
+                            <label for="16partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question16" id="16mostly" value="3">
+                            <label for="16mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question16" id="16completely" value="4">
+                            <label for="16completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>17. The governing body requires an assessment at least every two years of the perceptions of those who work in the organization to identify their level of satisfaction with the organization</legend>
+                            <input type="radio" name="question17" id="17none" value="0" checked="checked">
+                            <label for="17none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question17" id="17minimally" value="1">
+                            <label for="17minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question17" id="17partly" value="2">
+                            <label for="17partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question17" id="17mostly" value="3">
+                            <label for="17mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question17" id="17completely" value="4">
+                            <label for="17completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>18. Governing body members regularly participate in continuing governance education and governance development activities.</legend>
+                            <input type="radio" name="question18" id="18none" value="0" checked="checked">
+                            <label for="18none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question18" id="18minimally" value="1">
+                            <label for="18minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question18" id="18partly" value="2">
+                            <label for="18partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question18" id="18mostly" value="3">
+                            <label for="18mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question18" id="18completely" value="4">
+                            <label for="18completely"><img src="img/full.png" /></label>
+                    </fieldset>
+                    <br /> 
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>19. The expectation that governing body members advocate on behalf of the organization is clearly established during governing body member orientation.</legend>
+                            <input type="radio" name="question19" id="19none" value="0" checked="checked">
+                            <label for="19none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question19" id="19minimally" value="1">
+                            <label for="19minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question19" id="19partly" value="2">
+                            <label for="19partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question19" id="19mostly" value="3">
+                            <label for="19mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question19" id="19completely" value="4">
+                            <label for="19completely"><img src="img/full.png" /></label>
+                    </fieldset>
+                    <br /> 
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>20. Governing body self-assessment is treated as a top priority by the governing body and formal self-assessment is done at least once a year.</legend>
+                            <input type="radio" name="question20" id="20none" value="0" checked="checked">
+                            <label for="20none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question20" id="20minimally" value="1">
+                            <label for="20minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question20" id="20partly" value="2">
+                            <label for="20partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question20" id="20mostly" value="3">
+                            <label for="20mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question20" id="20completely" value="4">
+                            <label for="20completely"><img src="img/full.png" /></label>
+                    </fieldset>
+                    <br /> 
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>21. The governing body has a written policy or procedure describing ethical practices for financial and service quality reporting.</legend>
+                            <input type="radio" name="question21" id="21none" value="0" checked="checked">
+                            <label for="21none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question21" id="21minimally" value="1">
+                            <label for="21minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question21" id="21partly" value="2">
+                            <label for="21partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question21" id="21mostly" value="3">
+                            <label for="21mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question21" id="21completely" value="4">
+                            <label for="21completely"><img src="img/full.png" /></label>
+                    </fieldset>
+                    <br /> 
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>22. Governing body members take steps to build trust with key internal and external stakeholders.</legend>
+                            <input type="radio" name="question22" id="22none" value="0" checked="checked">
+                            <label for="22none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question22" id="22minimally" value="1">
+                            <label for="22minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question22" id="22partly" value="2">
+                            <label for="22partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question22" id="22mostly" value="3">
+                            <label for="22mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question22" id="22completely" value="4">
+                            <label for="22completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>23. Governing body members actively support the organization’s resource mobilization or fundraising activities.</legend>
+                            <input type="radio" name="question23" id="23none" value="0" checked="checked">
+                            <label for="23none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question23" id="23minimally" value="1">
+                            <label for="23minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question23" id="23partly" value="2">
+                            <label for="23partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question23" id="23mostly" value="3">
+                            <label for="23mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question23" id="23completely" value="4">
+                            <label for="23completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>24. The governing body uses the ability to advocate on behalf of the organization as a criterion in the selection process of new governing body members.</legend>
+                            <input type="radio" name="question24" id="24none" value="0" checked="checked">
+                            <label for="24none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question24" id="24minimally" value="1">
+                            <label for="24minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question24" id="24partly" value="2">
+                            <label for="24partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question24" id="24mostly" value="3">
+                            <label for="24mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question24" id="24completely" value="4">
+                            <label for="24completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>25. The governing body encourages an organizational culture that earns high health worker and staff morale. </legend>
+                            <input type="radio" name="question25" id="25none" value="0" checked="checked">
+                            <label for="25none"><img src="img/empty.png" /></label>
+                            <input type="radio" name="question25" id="25minimally" value="1">
+                            <label for="25minimally"><img src="img/one-quarter.png" /></label>
+                            <input type="radio" name="question25" id="25partly" value="2">
+                            <label for="25partly"><img src="img/half.png" /></label>
+                            <input type="radio" name="question25" id="25mostly" value="3">
+                            <label for="25mostly"><img src="img/three-quarter.png" /></label>
+                            <input type="radio" name="question25" id="25completely" value="4">
+                            <label for="25completely"><img src="img/full.png" /></label>
+                    </fieldset> 
+                    <br />
+
+                        <button class="ui-btn ui-shadow" id="btnStore">Save</button>
+                        <!--<button id="retrieveData">Retrieve Data</button>-->
+                        
+                    <!--<div id="result"></div>-->
+                </form>
+            </article>
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore" class="ui-btn-active ui-state-persist">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+    
+
+<!-- Advanced Govscore -->
+    <div data-role="page" id="advanced-govscore" data-title="Advanced Govscore" data-theme="d">
+
+        <div data-role="header">
+            <h1>Advanced Govscore</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <article>
+                <h2>Pick the practice area you want to assess.</h2>
+
+                <a href="#cultivating-accountability" class="ui-btn">Cultivating Accountability</a>
+                <a href="#engaging-stakeholders" class="ui-btn">Engaging Stakeholders</a>
+                <a href="#setting-shared-strategic-direction" class="ui-btn">Setting Shared Strategic Direction</a>
+                <a href="#stewarding-resources" class="ui-btn">Stewarding Resources</a>
+                <a href="#continuous-governance-enhancement" class="ui-btn">Continuous Governance Enhancement</a> 
+            </article>       
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+<!-- Cultivating Accountability -->
+    <div data-role="page" id="cultivating-accountability" data-title="Cultivating Accountability" data-theme="d">
+        
+
+        <div data-role="header">
+            <h1>Cultivating Accountability</h1>
+        </div>
+
+        <div data-role="content">
+            <article>
+                <h3>1. Culture of personal accountability</h3>
+
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. Governance and management leaders share information with stakeholders, community members, and health professionals and health workers.</legend>
+                            <input type="radio" name="ag1" id="ag1yes" value="1" checked="checked">
+                            <label for="ag1yes">Yes</label>
+                            <input type="radio" name="ag1" id="ag1no" value="0">
+                            <label for="ag1no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. Leaders of the organization give opportunity to the internal and external stakeholders to question their decisions. </legend>
+                            <input type="radio" name="ag2" id="ag2yes" value="1" checked="checked">
+                            <label for="ag2yes">Yes</label>
+                            <input type="radio" name="ag2" id="ag2no" value="0">
+                            <label for="ag2no">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Leaders of the organization answer questions from stakeholders, and welcome constructive feedback on their actions and decisions. </legend>
+                            <input type="radio" name="ag3" id="ag3yes" value="1" checked="checked">
+                            <label for="ag3yes">Yes</label>
+                            <input type="radio" name="ag3" id="ag3no" value="0">
+                            <label for="ag3no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Leaders of the organization accept responsibility for the present situation and the future success of the organization. </legend>
+                            <input type="radio" name="ag4" id="ag4yes" value="1" checked="checked">
+                            <label for="ag4yes">Yes</label>
+                            <input type="radio" name="ag4" id="ag4no" value="0">
+                            <label for="ag4no">NO</label>
+                    </fieldset>
+                </div>
+
+                <br />
+                <h3>2. Nurturing accountability of the organization to its external stakeholders and its social accountability</h3>
+
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. Governance and management leaders of the organization establish goals and standards against which their performance can be judgec.</legend>
+                            <input type="radio" name="ag5" id="ag5yes" value="1" checked="checked">
+                            <label for="ag5yes">Yes</label>
+                            <input type="radio" name="ag5" id="ag5no" value="0">
+                            <label for="ag5no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. Leaders of the organization give opportunity to the internal and external stakeholders to question their decisions. </legend>
+                            <input type="radio" name="ag6" id="ag6yes" value="1" checked="checked">
+                            <label for="ag6yes">Yes</label>
+                            <input type="radio" name="ag6" id="ag6no" value="0">
+                            <label for="ag6no">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Governance and management leaders establish mechanisms to investigate whether they and their organization have met the expected standards, goals, and targets. </legend>
+                            <input type="radio" name="ag7" id="ag7yes" value="1" checked="checked">
+                            <label for="ag7yes">Yes</label>
+                            <input type="radio" name="ag7" id="ag7no" value="0">
+                            <label for="ag7no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Governance and management leaders establish a process under which those who are responsible including themselves are held accountable for falling below the standards expected or are recognized for achieving or exceeding the standards. </legend>
+                            <input type="radio" name="ag8" id="ag8yes" value="1" checked="checked">
+                            <label for="ag8yes">Yes</label>
+                            <input type="radio" name="ag8" id="ag8no" value="0">
+                            <label for="ag8no">NO</label>
+                    </fieldset>
+                </div>
+
+                <br />
+                <h3>3. Fostering internal accountability in the organization and supporting accountability of health providers and health workers.</h3>
+
+                
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. Goals or tasks are clear to all in the organization. Managers, medical professionals and health workers know to whom they are accountable and for what.</legend>
+                            <input type="radio" name="ag9" id="ag9yes" value="1" checked="checked">
+                            <label for="ag9yes">Yes</label>
+                            <input type="radio" name="ag9" id="ag9no" value="0">
+                            <label for="ag9no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. Managers, medical professionals and health workers have sufficient resources to be able to succeec. </legend>
+                            <input type="radio" name="ag10" id="ag10yes" value="1" checked="checked">
+                            <label for="ag10yes">Yes</label>
+                            <input type="radio" name="ag10" id="ag10no" value="0">
+                            <label for="ag10no">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Performance and targets achieved are monitored in a transparent manner, using a process in which managers, medical professionals and health workers explain their decisions. Results are measured and explained to internal and external stakeholders. </legend>
+                            <input type="radio" name="ag11" id="ag11yes" value="1" checked="checked">
+                            <label for="ag11yes">Yes</label>
+                            <input type="radio" name="ag11" id="ag11no" value="0">
+                            <label for="ag11no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. There are consequences for non-performance or under-performance, and there is recognition and reward for excellent performance.</legend>
+                            <input type="radio" name="ag12" id="ag12yes" value="1" checked="checked">
+                            <label for="ag12yes">Yes</label>
+                            <input type="radio" name="ag12" id="ag12no" value="0">
+                            <label for="ag12no">NO</label>
+                    </fieldset>
+                </div>
+
+                    
+                <br />
+                <h3>4. Measuring performance</h3>
+
+                
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. There is performance measurement policy in the organization. </legend>
+                            <input type="radio" name="ag13" id="ag13yes" value="1" checked="checked">
+                            <label for="ag13yes">Yes</label>
+                            <input type="radio" name="ag13" id="ag13no" value="0">
+                            <label for="ag13no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. Pursuant to this policy, measures for all strategic and operational objectives are identified and used in the organization.</legend>
+                            <input type="radio" name="ag14" id="ag14yes" value="1" checked="checked">
+                            <label for="ag14yes">Yes</label>
+                            <input type="radio" name="ag14" id="ag14no" value="0">
+                            <label for="ag14no">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Accent is on celebrating excellent performance than apportioning the blamd.</legend>
+                            <input type="radio" name="ag15" id="ag15yes" value="1" checked="checked">
+                            <label for="ag15yes">Yes</label>
+                            <input type="radio" name="ag15" id="ag15no" value="0">
+                            <label for="ag15no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Performance information is used to refine programs and policies.</legend>
+                            <input type="radio" name="ag16" id="ag16yes" value="1" checked="checked">
+                            <label for="ag16yes">Yes</label>
+                            <input type="radio" name="ag16" id="ag16no" value="0">
+                            <label for="ag16no">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>5. Sharing information</h3>
+
+                
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The organization generates timely and accurate information in simple and readily comprehensible language and formats.</legend>
+                            <input type="radio" name="ag17" id="ag17yes" value="1" checked="checked">
+                            <label for="ag17yes">Yes</label>
+                            <input type="radio" name="ag17" id="ag17no" value="0">
+                            <label for="ag17no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. Access to information is given to those who are affected by decisions, transactions, or the work of the organization. </legend>
+                            <input type="radio" name="ag18" id="ag18yes" value="1" checked="checked">
+                            <label for="ag18yes">Yes</label>
+                            <input type="radio" name="ag18" id="ag18no" value="0">
+                            <label for="ag18no">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Reports on finances, activities, plans, and performance are made available to the public, and they are formally shared with the stakeholders, staff, regulatory bodies, and the media.</legend>
+                            <input type="radio" name="ag19" id="ag19yes" value="1" checked="checked">
+                            <label for="ag19yes">Yes</label>
+                            <input type="radio" name="ag19" id="ag19no" value="0">
+                            <label for="ag19no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Modern information and communication technologies are used for wider and effective dissemination of information.</legend>
+                            <input type="radio" name="ag20" id="ag20yes" value="1" checked="checked">
+                            <label for="ag20yes">Yes</label>
+                            <input type="radio" name="ag20" id="ag20no" value="0">
+                            <label for="ag20no">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>6. Effective oversight of service delivery</h3>
+
+                
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance and management leaders of the organization are mission focused. They make sure that policies exist for measuring and improving quality of services provided by the organization. </legend>
+                            <input type="radio" name="ag21" id="ag21yes" value="1" checked="checked">
+                            <label for="ag21yes">Yes</label>
+                            <input type="radio" name="ag21" id="ag21no" value="0">
+                            <label for="ag21no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance and management leaders monitor the quality of the services the organization provides using dashboards or other tools. They regularly celebrate innovations and quality improvements taking place in the organization.</legend>
+                            <input type="radio" name="ag22" id="ag22yes" value="1" checked="checked">
+                            <label for="ag22yes">Yes</label>
+                            <input type="radio" name="ag22" id="ag22no" value="0">
+                            <label for="ag22no">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance and management leaders ensure that internal and external stakeholder input is used in quality improvement.</legend>
+                            <input type="radio" name="ag23" id="ag23yes" value="1" checked="checked">
+                            <label for="ag23yes">Yes</label>
+                            <input type="radio" name="ag23" id="ag23no" value="0">
+                            <label for="ag23no">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The governance leaders evaluate performance of the senior management on a regular basis.</legend>
+                            <input type="radio" name="ag24" id="ag24yes" value="1" checked="checked">
+                            <label for="ag24yes">Yes</label>
+                            <input type="radio" name="ag24" id="ag24no" value="0">
+                            <label for="ag24no">NO</label>
+                    </fieldset>
+                </div>
+                <br />
+
+                    <button class="ui-btn ui-shadow" id="ag1Store">Save</button>
+                    <a href="#govscore-results" id="ag1-results" class="ui-btn">See Your Results</a>
+                <div id="result"></div>
+            </article>
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+<!-- Engaging Stakeholders -->
+    <div data-role="page" id="engaging-stakeholders" data-title="Engaging Stakeholders" data-theme="d">
+        <div data-role="panel" id="legend" data-position="left"> 
+            <h2>Panel Header..</h2>
+            <p>Some text in the panel..</p>
+            <a href="#engaging-stakeholders" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+        </div> 
+
+        <div data-role="header">
+            <h1>Engaging Stakeholders</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <p>Click on the button below to open the Panel.</p>
+            <a href="#legend" class="ui-btn ui-btn-inline">Open Panel</a>
+          
+            <article>
+                <h3>1. Achieving sincere stakeholder engagement</h3>
+
+                
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance leaders and senior managers keep stakeholders, community members, and health workers informed. </legend>
+                            <input type="radio" name="a7a" id="a7ayes" value="1" checked="checked">
+                            <label for="a7ayes">Yes</label>
+                            <input type="radio" name="a7a" id="a7ano" value="0">
+                            <label for="a7ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance leaders and senior managers listen to concerns of the people, employees, and stakeholders, and provide feedback to them.</legend>
+                            <input type="radio" name="a7b" id="a7byes" value="1" checked="checked">
+                            <label for="a7byes">Yes</label>
+                            <input type="radio" name="a7b" id="a7bno" value="0">
+                            <label for="a7bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance leaders and senior managers coordinate with stakeholders, community members, and health workers to make sure that their concerns are directly reflected in the governance decisions.</legend>
+                            <input type="radio" name="a7c" id="a7cyes" value="1" checked="checked">
+                            <label for="a7cyes">Yes</label>
+                            <input type="radio" name="a7c" id="a7cno" value="0">
+                            <label for="a7cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The governance leaders and senior managers work with the people and the health workers to formulate solutions, and frequently give decision-making in the hands of the people.</legend>
+                            <input type="radio" name="a7d" id="a7dyes" value="1" checked="checked">
+                            <label for="a7dyes">Yes</label>
+                            <input type="radio" name="a7d" id="a7dno" value="0">
+                            <label for="a7dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>2. Building trust</h3>
+
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance and management leaders of the organization do what is good for the organization and its service users.</legend>
+                            <input type="radio" name="a8a" id="a8ayes" value="1" checked="checked">
+                            <label for="a8ayes">Yes</label>
+                            <input type="radio" name="a8a" id="a8ano" value="0">
+                            <label for="a8ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance and management leaders make their promises and commitments carefully and often keep them.</legend>
+                            <input type="radio" name="a8b" id="a8byes" value="1" checked="checked">
+                            <label for="a8byes">Yes</label>
+                            <input type="radio" name="a8b" id="a8bno" value="0">
+                            <label for="a8bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance and management leaders deal with difficult issues with courage before they turn into major problems.</legend>
+                            <input type="radio" name="a8c" id="a8cyes" value="1" checked="checked">
+                            <label for="a8cyes">Yes</label>
+                            <input type="radio" name="a8c" id="a8cno" value="0">
+                            <label for="a8cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The governance and management leaders are just and fair in their decisions.</legend>
+                            <input type="radio" name="a8d" id="a8dyes" value="1" checked="checked">
+                            <label for="a8dyes">Yes</label>
+                            <input type="radio" name="a8d" id="a8dno" value="0">
+                            <label for="a8dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>3. Engaging with patients or service users</h3>
+                
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. Senior leadership of the organization is committed to engage with patients or health service users.</legend>
+                            <input type="radio" name="a9a" id="a9ayes" value="1" checked="checked">
+                            <label for="a9ayes">Yes</label>
+                            <input type="radio" name="a9a" id="a9ano" value="0">
+                            <label for="a9ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The employees and staff of the organization are trained to provide patient-centred care or user-centred services.</legend>
+                            <input type="radio" name="a9b" id="a9byes" value="1" checked="checked">
+                            <label for="a9byes">Yes</label>
+                            <input type="radio" name="a9b" id="a9bno" value="0">
+                            <label for="a9bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. There is regular measurement of patient or service user satisfaction and the feedback is used for improving the quality of services. </legend>
+                            <input type="radio" name="a9c" id="a9cyes" value="1" checked="checked">
+                            <label for="a9cyes">Yes</label>
+                            <input type="radio" name="a9c" id="a9cno" value="0">
+                            <label for="a9cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. There are mechanisms available for the patients or service users to communicate their voice.</legend>
+                            <input type="radio" name="a9d" id="a9dyes" value="1" checked="checked">
+                            <label for="a9dyes">Yes</label>
+                            <input type="radio" name="a9d" id="a9dno" value="0">
+                            <label for="a9dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>4. Engaging with doctors, other clinicians, and health workers</h3>
+
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance and management leaders discover common purpose with health workers such as improving service quality to meaningfully engage with health providers.</legend>
+                            <input type="radio" name="a10a" id="a10ayes" value="1" checked="checked">
+                            <label for="a10ayes">Yes</label>
+                            <input type="radio" name="a10a" id="a10ano" value="0">
+                            <label for="a10ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance and management leaders make it easy for doctors, nurses and clinicians to do the right thing for patients or health service users.</legend>
+                            <input type="radio" name="a10b" id="a10byes" value="1" checked="checked">
+                            <label for="a10byes">Yes</label>
+                            <input type="radio" name="a10b" id="a10bno" value="0">
+                            <label for="a10bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance and management leaders make it easy for doctors and clinicians to participate in governance decision making processes.</legend>
+                            <input type="radio" name="a10c" id="a10cyes" value="1" checked="checked">
+                            <label for="a10cyes">Yes</label>
+                            <input type="radio" name="a10c" id="a10cno" value="0">
+                            <label for="a10cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The governance and management leaders support doctors and clinical leaders to take positions on the governing body, and also provide them professional development opportunities on a regular basis.</legend>
+                            <input type="radio" name="a10d" id="a10dyes" value="1" checked="checked">
+                            <label for="a10dyes">Yes</label>
+                            <input type="radio" name="a10d" id="a10dno" value="0">
+                            <label for="a10dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>5. Collaborating with other sectors </h3>
+               
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance and management leaders of the organization go out of their way to make new connections and invest energy and time in building relationships with the leaders in other sectors that impact health.</legend>
+                            <input type="radio" name="a11a" id="a11ayes" value="1" checked="checked">
+                            <label for="a11ayes">Yes</label>
+                            <input type="radio" name="a11a" id="a11ano" value="0">
+                            <label for="a11ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance and management leaders draw on as many perspectives from other sectors as possible.</legend>
+                            <input type="radio" name="a11b" id="a11byes" value="1" checked="checked">
+                            <label for="a11byes">Yes</label>
+                            <input type="radio" name="a11b" id="a11bno" value="0">
+                            <label for="a11bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The organization has established governance structures to reach out to other sectors.</legend>
+                            <input type="radio" name="a11c" id="a11cyes" value="1" checked="checked">
+                            <label for="a11cyes">Yes</label>
+                            <input type="radio" name="a11c" id="a11cno" value="0">
+                            <label for="a11cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The organization has funding arrangements to support actions on the social determinants of health across many different sectors to attain health objectives.</legend>
+                            <input type="radio" name="a11d" id="a11dyes" value="1" checked="checked">
+                            <label for="a11dyes">Yes</label>
+                            <input type="radio" name="a11d" id="a11dno" value="0">
+                            <label for="a11dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>6. Realizing gender-responsive governance</h3>
+
+             
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance and management leaders consider the different needs of women and men before making their decisions, and the decisions respond to these different needs.</legend>
+                            <input type="radio" name="a12a" id="a12ayes" value="1" checked="checked">
+                            <label for="a12ayes">Yes</label>
+                            <input type="radio" name="a12a" id="a12ano" value="0">
+                            <label for="a12ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance and management leaders consult women and men in governance and management positions, women and men clinicians, women and men health workers, and women and men health service users, or women’s organizations before making their decisions.</legend>
+                            <input type="radio" name="a12b" id="a12byes" value="1" checked="checked">
+                            <label for="a12byes">Yes</label>
+                            <input type="radio" name="a12b" id="a12bno" value="0">
+                            <label for="a12bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance and management leaders consider the implications of their decisions on health service users as a whole and women and men users of health service separately, and also on health workers as a whole and women and men health workers separately.</legend>
+                            <input type="radio" name="a12c" id="a12cyes" value="1" checked="checked">
+                            <label for="a12cyes">Yes</label>
+                            <input type="radio" name="a12c" id="a12cno" value="0">
+                            <label for="a12cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Performance is measured and reported disaggregated by gender. Aggregate evidence and also sex-disaggregated evidence is considered before making their decisions.</legend>
+                            <input type="radio" name="a12d" id="a12dyes" value="1" checked="checked">
+                            <label for="a12dyes">Yes</label>
+                            <input type="radio" name="a12d" id="a12dno" value="0">
+                            <label for="a12dno">NO</label>
+                    </fieldset>
+                </div>
+                <br />
+
+                <button class="ui-btn ui-shadow" id="ag2Store">Save</button>
+                <a href="#govscore-results" id="ag2-results" class="ui-btn">See Your Results</a>
+                <div id="result"></div>
+            </article>
+
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+<!-- Setting Shared Strategic Direction -->
+    <div data-role="page" id="setting-shared-strategic-direction" data-title="Setting Shared Strategic Direction" data-theme="d">
+
+        <div data-role="header">
+            <h1>Setting Shared Strategic Direction</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <article>
+                <h3>1. Defining the strategic direction of the organization</h3>
+
+                <div class="questions" >
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance and management leaders of the organization have developed the strategic direction or vision for the organization.</legend>
+                            <input type="radio" name="a13a" id="a13ayes" value="1" checked="checked">
+                            <label for="a13ayes">Yes</label>
+                            <input type="radio" name="a13a" id="a13ano" value="0">
+                            <label for="a13ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance and management leaders have defined strategy and action plan with measurable goals to achieve this vision.</legend>
+                            <input type="radio" name="a13b" id="a13byes" value="1" checked="checked">
+                            <label for="a13byes">Yes</label>
+                            <input type="radio" name="a13b" id="a13bno" value="0">
+                            <label for="a13bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance and management leaders have raised and allocated resources to implement the action plan and accomplish the vision.</legend>
+                            <input type="radio" name="a13c" id="a13cyes" value="1" checked="checked">
+                            <label for="a13cyes">Yes</label>
+                            <input type="radio" name="a13c" id="a13cno" value="0">
+                            <label for="a13cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The governance leaders do not preoccupy themselves with day-to-day operational and management matters. They have set up accountabilities, and they make decisions to accomplish the strategic action plan.</legend>
+                            <input type="radio" name="a13d" id="a13dyes" value="1" checked="checked">
+                            <label for="a13dyes">Yes</label>
+                            <input type="radio" name="a13d" id="a13dno" value="0">
+                            <label for="a13dno">NO</label>
+                    </fieldset>
+                </div>
+
+                <br />
+                <h3>2. Establishing shared vision among key stakeholders</h3>
+              
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The key stakeholders of the organization agree with the vision and the strategic direction of the organization.</legend>
+                            <input type="radio" name="a14a" id="a14ayes" value="1" checked="checked">
+                            <label for="a14ayes">Yes</label>
+                            <input type="radio" name="a14a" id="a14ano" value="0">
+                            <label for="a14ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The key stakeholders of the organization agree with the strategic plan of the organization.</legend>
+                            <input type="radio" name="a14b" id="a14byes" value="1" checked="checked">
+                            <label for="a14byes">Yes</label>
+                            <input type="radio" name="a14b" id="a14bno" value="0">
+                            <label for="a14bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance and management leaders inspire everyone in the organization and its key stakeholders to achieve the organization’s vision. </legend>
+                            <input type="radio" name="a14c" id="a14cyes" value="1" checked="checked">
+                            <label for="a14cyes">Yes</label>
+                            <input type="radio" name="a14c" id="a14cno" value="0">
+                            <label for="a14cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Progress is reported to the key stakeholders of the organization on a regular basis, and they are able to monitor the implementation of its strategic plan.</legend>
+                            <input type="radio" name="a14d" id="a14dyes" value="1" checked="checked">
+                            <label for="a14dyes">Yes</label>
+                            <input type="radio" name="a14d" id="a14dno" value="0">
+                            <label for="a14dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>3. Enabling and exercising leadership in the organization</h3>
+
+                <div class="questions" >
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. Leadership is exercised at all levels in the organization. Leaders who govern or governance leaders, senior managers, clinician leaders, and leaders of health worker teams exhibit leadership behaviors.</legend>
+                            <input type="radio" name="a15a" id="a15ayes" value="1" checked="checked">
+                            <label for="a15ayes">Yes</label>
+                            <input type="radio" name="a15a" id="a15ano" value="0">
+                            <label for="a15ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. Governance leaders govern in a strong partnership with the senior management, health providers and health workers, and community leaders.</legend>
+                            <input type="radio" name="a15b" id="a15byes" value="1" checked="checked">
+                            <label for="a15byes">Yes</label>
+                            <input type="radio" name="a15b" id="a15bno" value="0">
+                            <label for="a15bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The organization invests in continuing leadership education at all levels by providing opportunities for participation in formal leadership development programs, mentoring programs, study tours, peer interactions, and executive education programs, and access to the state of the art knowledge resources.</legend>
+                            <input type="radio" name="a15c" id="a15cyes" value="1" checked="checked">
+                            <label for="a15cyes">Yes</label>
+                            <input type="radio" name="a15c" id="a15cno" value="0">
+                            <label for="a15cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The organization has moved away from scattered, disconnected activities towards purposeful, interconnected actions.</legend>
+                            <input type="radio" name="a15d" id="a15dyes" value="1" checked="checked">
+                            <label for="a15dyes">Yes</label>
+                            <input type="radio" name="a15d" id="a15dno" value="0">
+                            <label for="a15dno">NO</label>
+                    </fieldset>
+                </div>
+                <br />
+
+                <button class="ui-btn ui-shadow" id="ag3Store">Save</button>
+                <a href="#govscore-results" id="ag3-results" class="ui-btn">See Your Results</a>
+                <div id="result"></div>
+            </article>  
+
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+
+<!-- Stewarding Resources -->
+    <div data-role="page" id="stewarding-resources" data-title="Stewarding Resources" data-theme="d">
+
+        <div data-role="header">
+            <h1>Stewarding Resources</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <article>
+                <h3>1. Mobilizing resources</h3>
+
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance leaders have been able to mobilize adequate resources for the organization to be able to provide satisfactory services.</legend>
+                            <input type="radio" name="a16a" id="a16ayes" value="1" checked="checked">
+                            <label for="a16ayes">Yes</label>
+                            <input type="radio" name="a16a" id="a16ano" value="0">
+                            <label for="a16ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance leaders have been able to mobilize adequate resources to accomplish the organization’s mission and plans.</legend>
+                            <input type="radio" name="a16b" id="a16byes" value="1" checked="checked">
+                            <label for="a16byes">Yes</label>
+                            <input type="radio" name="a16b" id="a16bno" value="0">
+                            <label for="a16bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance leaders have been able to mobilize adequate resources to continue its activities in the future and also expand activities to keep up with population growth and with the additional demands created by the epidemiological situation.</legend>
+                            <input type="radio" name="a16c" id="a16cyes" value="1" checked="checked">
+                            <label for="a16cyes">Yes</label>
+                            <input type="radio" name="a16c" id="a16cno" value="0">
+                            <label for="a16cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The governance leaders have been able to raise the needed resources from diverse sources.</legend>
+                            <input type="radio" name="a16d" id="a16dyes" value="1" checked="checked">
+                            <label for="a16dyes">Yes</label>
+                            <input type="radio" name="a16d" id="a16dno" value="0">
+                            <label for="a16dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>2. Wisely using resources </h3>
+
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. Every dollar spent in the organization advances the mission of the organization. The governance leaders monitor and evaluate financial performance on a regular basis using actual financial and performance data and dashboards.</legend>
+                            <input type="radio" name="a17a" id="a17ayes" value="1" checked="checked">
+                            <label for="a17ayes">Yes</label>
+                            <input type="radio" name="a17a" id="a17ano" value="0">
+                            <label for="a17ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The governance leaders make their expectations in terms of financial results and service quality clear to the senior management ahead of the time period, and closely monitor achievement of these results.</legend>
+                            <input type="radio" name="a17b" id="a17byes" value="1" checked="checked">
+                            <label for="a17byes">Yes</label>
+                            <input type="radio" name="a17b" id="a17bno" value="0">
+                            <label for="a17bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance leaders ensure that the organization maintains a good financial standing, it is audited in a professional way, adequate internal controls are in place and warning signs are pursued when something is wrong. </legend>
+                            <input type="radio" name="a17c" id="a17cyes" value="1" checked="checked">
+                            <label for="a17cyes">Yes</label>
+                            <input type="radio" name="a17c" id="a17cno" value="0">
+                            <label for="a17cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The governance leaders have created opportunities for the public and health service users to be included in monitoring and evaluating how resources are raised, allocated, and used and how health services are provided.</legend>
+                            <input type="radio" name="a17d" id="a17dyes" value="1" checked="checked">
+                            <label for="a17dyes">Yes</label>
+                            <input type="radio" name="a17d" id="a17dno" value="0">
+                            <label for="a17dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>3. Pursuit of efficiency and sustainability</h3>
+        
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governance leaders insist on costing of services. Cost data is available for various services provided by the organization.</legend>
+                            <input type="radio" name="a18a" id="a18ayes" value="1" checked="checked">
+                            <label for="a18ayes">Yes</label>
+                            <input type="radio" name="a18a" id="a18ano" value="0">
+                            <label for="a18ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. Cost per outcome data is available in the organization.</legend>
+                            <input type="radio" name="a18b" id="a18byes" value="1" checked="checked">
+                            <label for="a18byes">Yes</label>
+                            <input type="radio" name="a18b" id="a18bno" value="0">
+                            <label for="a18bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The governance leaders have embedded efficiency into every aspect of the business and financial planning or the organization.</legend>
+                            <input type="radio" name="a18c" id="a18cyes" value="1" checked="checked">
+                            <label for="a18cyes">Yes</label>
+                            <input type="radio" name="a18c" id="a18cno" value="0">
+                            <label for="a18cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. They build the financial capacity of the organization to continue its activities in the future and to expand them as needed.</legend>
+                            <input type="radio" name="a18d" id="a18dyes" value="1" checked="checked">
+                            <label for="a18dyes">Yes</label>
+                            <input type="radio" name="a18d" id="a18dno" value="0">
+                            <label for="a18dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>4. Use of information, evidence and technology</h3>
+            
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The organization uses modern information and communication technologies for promoting transparency, cultivating accountability, engaging with stakeholders, and stewarding resources. </legend>
+                            <input type="radio" name="a19a" id="a19ayes" value="1" checked="checked">
+                            <label for="a19ayes">Yes</label>
+                            <input type="radio" name="a19a" id="a19ano" value="0">
+                            <label for="a19ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The organization uses modern information and communication technologies for monitoring service delivery.</legend>
+                            <input type="radio" name="a19b" id="a19byes" value="1" checked="checked">
+                            <label for="a19byes">Yes</label>
+                            <input type="radio" name="a19b" id="a19bno" value="0">
+                            <label for="a19bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Citizens use technology in the monitoring of health services, such as using mobile phones to report on the availability of medicines and vaccines, stock-outs, waiting time at clinics, health worker payments, functionality of equipment, etc.</legend>
+                            <input type="radio" name="a19c" id="a19cyes" value="1" checked="checked">
+                            <label for="a19cyes">Yes</label>
+                            <input type="radio" name="a19c" id="a19cno" value="0">
+                            <label for="a19cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. eProcurement or internet is used to publish contract and procurement opportunities for goods and services.</legend>
+                            <input type="radio" name="a19d" id="a19dyes" value="1" checked="checked">
+                            <label for="a19dyes">Yes</label>
+                            <input type="radio" name="a19d" id="a19dno" value="0">
+                            <label for="a19dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>5. Practice of ethical and moral integrity</h3>
+      
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The organization has code of conduct and ethics and it is widely followed from the top to bottom. There is whistleblower protection and ethics violation reporting mechanism.</legend>
+                            <input type="radio" name="a20a" id="a20ayes" value="1" checked="checked">
+                            <label for="a20ayes">Yes</label>
+                            <input type="radio" name="a20a" id="a20ano" value="0">
+                            <label for="a20ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. All stages of plan and budget formulation, execution, and reporting are accessible to the public and key stakeholders.</legend>
+                            <input type="radio" name="a20b" id="a20byes" value="1" checked="checked">
+                            <label for="a20byes">Yes</label>
+                            <input type="radio" name="a20b" id="a20bno" value="0">
+                            <label for="a20bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Policies, practices, budget, expenditures, and performance information are made open to stakeholder and public scrutiny.</legend>
+                            <input type="radio" name="a20c" id="a20cyes" value="1" checked="checked">
+                            <label for="a20cyes">Yes</label>
+                            <input type="radio" name="a20c" id="a20cno" value="0">
+                            <label for="a20cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Stakeholders and the public play a role in the oversight of activities of the organization.</legend>
+                            <input type="radio" name="a20d" id="a20dyes" value="1" checked="checked">
+                            <label for="a20dyes">Yes</label>
+                            <input type="radio" name="a20d" id="a20dno" value="0">
+                            <label for="a20dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>6. Eradicating corruption</h3>
+             
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. It is not likely that the health service user would have to offer money, a present or a favor (more than official charge) to get service in the organization.</legend>
+                            <input type="radio" name="a21a" id="a21ayes" value="1" checked="checked">
+                            <label for="a21ayes">Yes</label>
+                            <input type="radio" name="a21a" id="a21ano" value="0">
+                            <label for="a21ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The organization demonstrates transparency in procedures and decisions on high value procurement and contracts.</legend>
+                            <input type="radio" name="a21b" id="a21byes" value="1" checked="checked">
+                            <label for="a21byes">Yes</label>
+                            <input type="radio" name="a21b" id="a21bno" value="0">
+                            <label for="a21bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The service users are able to participate in governance structures and they have a mechanism to report corruption.</legend>
+                            <input type="radio" name="a21c" id="a21cyes" value="1" checked="checked">
+                            <label for="a21cyes">Yes</label>
+                            <input type="radio" name="a21c" id="a21cno" value="0">
+                            <label for="a21cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. There is zero tolerance policy in the organization which means when an instance of corruption is discovered by the organization, the involved governance leaders, managers or staff are subjected to swift and decisive disciplinary action.</legend>
+                            <input type="radio" name="a21d" id="a21dyes" value="1" checked="checked">
+                            <label for="a21dyes">Yes</label>
+                            <input type="radio" name="a21d" id="a21dno" value="0">
+                            <label for="a21dno">NO</label>
+                    </fieldset>
+                </div>
+                <br />
+
+                <button class="ui-btn ui-shadow" id="ag4Store">Save</button>
+                <a href="#govscore-results" id="ag4-results" class="ui-btn">See Your Results</a>
+                <div id="result"></div>
+            </article>
+
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+<!-- Continuous Governance Enhancement -->
+    <div data-role="page" id="continuous-governance-enhancement" data-title="Continuous Governance Enhancement" data-theme="d">
+
+        <div data-role="header">
+            <h1>Continuous Governance Enhancement</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <article>
+
+                <h3>1. Cultivating governance competencies</h3>
+      
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The leaders who govern the organization have skills in cultivating accountability, engaging stakeholders, setting shared strategic direction, and mobilizing resources. </legend>
+                            <input type="radio" name="a22a" id="a22ayes" value="1" checked="checked">
+                            <label for="a22ayes">Yes</label>
+                            <input type="radio" name="a22a" id="a22ano" value="0">
+                            <label for="a22ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The leaders who govern the organization have skills for leading change, working in collaborative fashion, 
+                        managing complexity, leading teams, and developing talent.</legend>
+                            <input type="radio" name="a22b" id="a22byes" value="1" checked="checked">
+                            <label for="a22byes">Yes</label>
+                            <input type="radio" name="a22b" id="a22bno" value="0">
+                            <label for="a22bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The leaders who govern the organization have a talent for innovative thinking, impact and influence, and relationship building.</legend>
+                            <input type="radio" name="a22c" id="a22cyes" value="1" checked="checked">
+                            <label for="a22cyes">Yes</label>
+                            <input type="radio" name="a22c" id="a22cno" value="0">
+                            <label for="a22cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The leaders who govern the organization have knowledge of issues in health care business and finance, and human resources for health.</legend>
+                            <input type="radio" name="a22d" id="a22dyes" value="1" checked="checked">
+                            <label for="a22dyes">Yes</label>
+                            <input type="radio" name="a22d" id="a22dno" value="0">
+                            <label for="a22dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>2. Building diversity in the organization</h3>
+              
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The organization has a commitment to establishing diversity in its governance, management, and service delivery.</legend>
+                            <input type="radio" name="a23a" id="a23ayes" value="1" checked="checked">
+                            <label for="a23ayes">Yes</label>
+                            <input type="radio" name="a23a" id="a23ano" value="0">
+                            <label for="a23ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. All important stakeholder constituencies are represented on the governing board.</legend>
+                            <input type="radio" name="a23b" id="a23byes" value="1" checked="checked">
+                            <label for="a23byes">Yes</label>
+                            <input type="radio" name="a23b" id="a23bno" value="0">
+                            <label for="a23bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. The employees of the organization are diverse in terms of gender, age, race, ethnicity, sexual orientation, socio-economic status, and religious and political beliefs.</legend>
+                            <input type="radio" name="a23c" id="a23cyes" value="1" checked="checked">
+                            <label for="a23cyes">Yes</label>
+                            <input type="radio" name="a23c" id="a23cno" value="0">
+                            <label for="a23cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. The service users of the organization are diverse in terms of gender, age, race, ethnicity, sexual orientation, socio-economic status, and religious and political beliefs.</legend>
+                            <input type="radio" name="a23d" id="a23dyes" value="1" checked="checked">
+                            <label for="a23dyes">Yes</label>
+                            <input type="radio" name="a23d" id="a23dno" value="0">
+                            <label for="a23dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>3. Organizing governance orientation and continuous governance education</h3>
+          
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. There is a formal orientation program and ongoing education program for the governing body or the leaders who govern. The governing body has a written policy and budget for its education and development.</legend>
+                            <input type="radio" name="a24a" id="a24ayes" value="1" checked="checked">
+                            <label for="a24ayes">Yes</label>
+                            <input type="radio" name="a24a" id="a24ano" value="0">
+                            <label for="a24ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. The ongoing education program of the governing body or the leaders who govern is tied to the organization’s strategic challenges.</legend>
+                            <input type="radio" name="a24b" id="a24byes" value="1" checked="checked">
+                            <label for="a24byes">Yes</label>
+                            <input type="radio" name="a24b" id="a24bno" value="0">
+                            <label for="a24bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. Each meeting of the governing body includes an education component.</legend>
+                            <input type="radio" name="a24c" id="a24cyes" value="1" checked="checked">
+                            <label for="a24cyes">Yes</label>
+                            <input type="radio" name="a24c" id="a24cno" value="0">
+                            <label for="a24cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. Governance education is designed in such a way that it helps fill the knowledge and skill gaps in the governing body as seen in regular governance self-assessments.</legend>
+                            <input type="radio" name="a24d" id="a24dyes" value="1" checked="checked">
+                            <label for="a24dyes">Yes</label>
+                            <input type="radio" name="a24d" id="a24dno" value="0">
+                            <label for="a24dno">NO</label>
+                    </fieldset>
+                </div>
+
+
+                <br />
+                <h3>4. Performing regular governance assessments and working for continuous governance enhancement</h3>
+             
+                <div class="questions">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>a. The governing body or the leaders who govern conduct a formal process to evaluate their own performance.</legend>
+                            <input type="radio" name="a25a" id="a25ayes" value="1" checked="checked">
+                            <label for="a25ayes">Yes</label>
+                            <input type="radio" name="a25a" id="a25ano" value="0">
+                            <label for="a25ano">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>b. They use the assessment process to identify specific improvement opportunities, define specific performance improvement goals, and include them in the plan for improvement.</legend>
+                            <input type="radio" name="a25b" id="a25byes" value="1" checked="checked">
+                            <label for="a25byes">Yes</label>
+                            <input type="radio" name="a25b" id="a25bno" value="0">
+                            <label for="a25bno">NO</label>
+                            
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>c. They continuously improve their own performance by working on their weak areas noticed in the assessment.</legend>
+                            <input type="radio" name="a25c" id="a25cyes" value="1" checked="checked">
+                            <label for="a25cyes">Yes</label>
+                            <input type="radio" name="a25c" id="a25cno" value="0">
+                            <label for="a25cno">NO</label>
+                    </fieldset>
+                    <br />
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                        <legend>d. They use their governance education in improving the organization’s performance.</legend>
+                            <input type="radio" name="a25d" id="a25dyes" value="1" checked="checked">
+                            <label for="a25dyes">Yes</label>
+                            <input type="radio" name="a25d" id="a25dno" value="0">
+                            <label for="a25dno">NO</label>
+                    </fieldset>
+                </div>
+                <br />
+
+                <button class="ui-btn ui-shadow" id="ag5Store">Save</button>
+                <a href="#govscore-results" id="ag5-results" class="ui-btn">See Your Results</a>
+                <div id="result"></div>
+            </article>
+
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+<!-- Govscore Results -->
+    <div data-role="page" id="govscore-results" class="" data-title="Govscore Results" data-theme="g">
+
+        <div data-role="header">
+            <h1>Govscore Results</h1>
+        </div><!-- header -->
+
+        <div data-role="content">
+            <article>
+                <div id="gs-results">
+
+                    
+
+                </div>
+            </article>
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore<br />&nbsp;</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+    <script src="phonegap.js"></script>
+    <!--<script type="text/javascript"  src="PushNotification.js"></script>-->
+    <!--<script type="text/javascript" src="js/index.js"></script>-->
+    <script type="text/javascript" src="lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.mobile-1.4.5.min.js"></script>
+   
+    <!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>-->
+
+
+    </body>
+</html>

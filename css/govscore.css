@@ -1,0 +1,53 @@
+#home,
+#home.ui-content {
+	background-color: #34cfc6;
+	height:100%;
+}
+
+/* navigation -------------------------------------*/
+
+.ui-btn-active {
+	background-color:#34cfc6;
+}
+.ui-footer .ui-navbar li {
+	height: 100%;
+}
+
+.ui-controlgroup-controls {
+width: 100%;
+}
+.ui-radio.ui-mini {
+width: 20%;
+}
+label.ui-btn.ui-corner-all.ui-btn-inherit {
+	font-weight: normal;
+	font-size: 12px;
+	height: 32px;
+	text-align: center;
+}
+/* questionnaire ---------------------------------*/
+label.ui-btn img {
+	width: 60%;
+}
+#organization-button span {
+	font-weight: 300;
+	text-align: left;
+	color: #333;
+}
+#organization-button {
+	padding: .7em .4em;
+}
+/*.questions {
+	display: none;
+}*/
+#govscore-results1,
+#govscore-results2 {
+	display: none;
+}
+#govscore-results1.see,
+#govscore-results2.see {
+	display: block;
+}
+button.hide {
+	display:none;
+}

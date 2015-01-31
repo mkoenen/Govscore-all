@@ -1,0 +1,100 @@
+/*Smartphone Layout (portrait and landscape)
+ *
+ */
+body, html {
+    font: 1em/1.3em sans-serif;
+    padding: 3px;
+    margin: 0;
+}
+ h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+.box {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: .7em;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid black;
+    padding:10px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    box-shadow: 3px 3px 3px #ccc;
+}
+img {
+    width: 100%;
+}
+footer {
+    clear: both;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 12pt;
+    text-align: center;
+}
+nav {
+  width:    234px;
+  float:    left;
+  height:   400px;
+  background-color: rgb(215,215,215);
+ }
+ nav ul
+{
+    list-style-type: none;
+    padding-left: 3px;
+}
+article {
+    padding: 20px 0;
+}
+
+#mainContent
+{
+    width: 723px;
+    float: right;
+    height: 400px;
+    padding-left: 3px;
+    background-color: rgb(222,222,222);
+
+}
+.lottery {
+    font-size: 1em;
+}
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+{
+    /*styles */
+}
+
+/*Smartphone Layout (landscape)
+ */
+@media only screen
+and (min-width: 321px)
+{
+    /* Styles for smartphone landscape */
+}
+
+/*Smartphone Portrait */
+@media only screen
+and (max-width: 320px)
+{
+    /* Portrait */
+}
+
+/*iPads */
+@media only screen
+and (min-device-wdith: 768px)
+and (max-device-width: 1024px)
+{
+    /* iPad Styles */
+}
