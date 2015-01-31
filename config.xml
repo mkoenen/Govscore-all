@@ -72,7 +72,5 @@
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
     <access origin="*" />
 
-    <gap:platform name="android" />
-    <gap:platform name="winphone" />
 
 </widget>
