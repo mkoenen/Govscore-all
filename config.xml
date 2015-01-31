@@ -18,25 +18,6 @@
         Margarete Koenen
     </author>
 
-    <icon src="icon.png" />
-    
-    <icon src="res/icons/android/drawable-ldpi/icon.png" gap:platform="android" gap:qualifier="ldpi" />
-    <icon src="res/icons/android/drawable-mdpi/icon.png" gap:platform="android" gap:qualifier="mdpi" />
-    <icon src="res/icons/android/drawable-hdpi/icon.png" gap:platform="android" gap:qualifier="hdpi" />
-    <icon src="res/icons/android/drawable-xhdpi/icon.png" gap:platform="android" gap:qualifier="xhdpi" />
-    <icon src="res/icons/android/drawable-xxhdpi/icon.png" gap:platform="android" gap:qualifier="xxhdpi" />
-    <icon src="res/icons/android/drawable-xxdxhpi/icon.png" gap:platform="android" gap:qualifier="xxxhdpi" />
-
-    <gap:splash src="screen.png" />
-    
-    <gap:splash src="res/screen/android/drawable-ldpi/screen.png"  gap:platform="android" gap:qualifier="ldpi" />
-    <gap:splash src="res/screen/android/drawable-mdpi/screen.png"  gap:platform="android" gap:qualifier="mdpi" />
-    <gap:splash src="res/screen/android/drawable-hdpi/screen.png"  gap:platform="android" gap:qualifier="hdpi" />
-    <gap:splash src="res/screen/android/drawable-xdpi/screen.png" gap:platform="android" gap:qualifier="xhdpi" />
-    <gap:splash src="res/screen/android/drawable-xxdpi/screen.png" gap:platform="android" gap:qualifier="xxhdpi" />
-    <gap:splash src="res/screen/android/portrait-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
-    <gap:splash src="res/screen/android/landscape-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi" />
-
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
@@ -48,29 +29,24 @@
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
-    <!--<preference name="auto-hide-splash-screen" value="true" />-->
+    <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
 
-    <!--<feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
-    <feature name="http://api.phonegap.com/1.0/media"/>-->
+    <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <!--<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />-->
-    <!--<gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.1" />-->
-    <gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.5.0" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <!--<gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />-->
+    <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.1" />
 
     <!--<access origin="*"/>--> <!-- allow all pages, use for development -->
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
-    <access origin="*" />
-
 
 </widget>
