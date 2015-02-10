@@ -98,17 +98,32 @@ function validateEmail() {
 var organization;
 
 function messageAfterSaveLocal() {
-    alert('Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.');
+    navigator.notification.alert(
+        'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.',
+        alertDismissed,         // callback
+        'Alert',                // title
+        'OK'                    // buttonName
+    );
 }
 
 
 function afterSavedServer(form, orgcode) {
 
-    alert('Your answers to the questionnaire ' + form + ' have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode '.');
+    navigator.notification.alert(
+        'Your answers to the questionnaire ' + form + ' have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
+         alertDismissed,         // callback
+        'Alert',                // title
+        'OK'                    // buttonName
+    );
 }
 
 function alreadySaved() {
-    alert('You previously finished this assessment. Please check your results.');
+    navigator.notification.alert(
+        'You previously finished this assessment. Please check your results.',  // message
+        alertDismissed,         // callback
+        'Alert',                // title
+        'OK'                    // buttonName
+    );
 }
 
 

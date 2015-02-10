@@ -41,12 +41,14 @@
     <feature name="http://api.phonegap.com/1.0/media"/>-->
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
+    
 
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <!--<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.1" />
     <gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.5.0" />-->
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+
 
     <!--<access origin="*"/>--> <!-- allow all pages, use for development -->
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
