@@ -6,7 +6,17 @@ window.onload = function(){
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("deviceready",showAlert,false);
 };
+ function showAlert() {
+    window.alert('Connected!');
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
 
 //check if online according to the above interval
 function onOnline() {
