@@ -214,6 +214,7 @@ html .ui-alt-icon .ui-radio-off:after {
 /* C
 -----------------------------------------------------------------------------------------------------------*/
 /* Bar: Toolbars, dividers, slider track */
+
 .ui-bar-c,
 .ui-page-theme-c .ui-navbar .ui-btn.ui-btn-active, 
 .ui-page-theme-c .ui-navbar .ui-btn:hover,
@@ -223,7 +224,7 @@ html .ui-body-c .ui-bar-inherit,
 html body .ui-group-theme-c .ui-bar-inherit {
 	background-color: #2fb116 /*{c-bar-background-color}*/;
 	border-color: #2fb116 /*{c-bar-border}*/;
-	color: #333333 /*{c-bar-color}*/;
+	color: #ffffff /*{c-bar-color}*/;
 	font-weight: bold;
 }
 .ui-bar-c {

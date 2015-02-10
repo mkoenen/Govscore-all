@@ -3,6 +3,9 @@
 	background-color: #34cfc6;
 	height:100%;
 }
+.ui-page .ui-header .ui-title {
+	margin: 0 20%;
+}
 
 /* navigation -------------------------------------*/
 
@@ -22,7 +25,7 @@ width: 20%;
 label.ui-btn.ui-corner-all.ui-btn-inherit {
 	font-weight: normal;
 	font-size: 12px;
-	height: 32px;
+	height: auto;
 	text-align: center;
 }
 /* questionnaire ---------------------------------*/
@@ -41,13 +44,72 @@ label.ui-btn img {
 	display: none;
 }*/
 #govscore-results1,
-#govscore-results2 {
+#govscore-results2,
+#ag1-results,
+#ag2-results, 
+#ag3-results, 
+#ag4-results, 
+#ag5-results {
 	display: none;
 }
 #govscore-results1.see,
-#govscore-results2.see {
+#govscore-results2.see,
+#ag1-results.see,
+#ag2-results.see, 
+#ag3-results.see, 
+#ag4-results.see, 
+#ag5-results.see  {
 	display: block;
 }
 button.hide {
 	display:none;
+}
+.legend {
+	width: 5%;
+	float: right;
+	text-align: right;
+	padding: 0 0 0 2%;
+	text-decoration: none;	
+	background-color: #fff;
+}
+/* pop-up ----------------------------------------*/
+
+.ui-popup-container {
+	position: fixed !important;
+	top: 60px !important;
+	left: 25% !important;
+	}
+
+div#popupBasic {
+	background: #CBE8C5;
+}
+#legend span {
+	padding: 4px 10px 0;
+	display: inline-block;
+}
+#legend img {
+	width: 20%;
+	float: left;
+	clear: both;
+}
+#legend{
+	background-color: rgba(0, 0, 0, 0)/*{c-bup-background-color}*/;
+	padding: 0 0 10% 10%;
+}
+
+/* results ----------------------------------------*/
+
+#gs-results p {
+margin: .5em 0;
+}
+#gs-results h3 {
+margin: .5em 0;
+}
+#gs-results div {
+border: 1px solid #DDD;
+padding: 0 3%;
+margin: 1em 0;
+}
+p.level {
+font-style: italic;
 }
