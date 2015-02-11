@@ -46,7 +46,12 @@ function validate() {
              document.gsForm.username.focus() ;
              return false;
         }
+        if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
+             navigator.notification.alert( "Email entries don't match. Please try again" );
+             document.gsForm.email.focus() ;
+             return false;
+        }
         if( document.gsForm.email.value === "" ) {
 
              navigator.notification.alert( "Please enter your email address!" );
