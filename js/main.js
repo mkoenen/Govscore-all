@@ -31,18 +31,17 @@ function validate() {
         if( document.gsForm.username.value === "" ) {
 
              window.alert( "Please enter your full name!" );
-             window.location.hash = "govscore";
+             document.gsForm.username.focus();
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
              window.alert( "Email entries don't match. Please try again" );
-             document.gsForm.email.focus() ;
+             document.gsForm.email.focus();
         }
         if( document.gsForm.email.value === "" ) {
 
              window.alert( "Please enter your email address!" );
-             document.gsForm.email.focus() ;
-             return false;
+             document.gsForm.email.focus();
 
         }else{
 
