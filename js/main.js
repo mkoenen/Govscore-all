@@ -23,38 +23,31 @@ function setbutton() {
 /* Form Validation -------------------------------------*/
 
 function validate() {
-
     if(gsdata){
 
         alreadySaved();
 
     }else{
-        var result = true;
-        var msg="";
-
         if( document.gsForm.username.value === "" ) {
 
-             msg +="Please enter your full name. \n" );
-             document.gsForm.username.focus();
+             window.alert( "Please enter your full name!" );
+             document.gsForm.username.focus() ;
              document.getElementById('username').style.color="red";
-             result = false;
-
-        }
-        if( document.gsForm.email.value === "" ) {
-
-             msg +="Please enter your email address. \n";
-             document.gsForm.email.focus();
-             document.getElementById('username').style.color="red";
-            result = false;
+             return false;
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
-             msg += "Email entries don't match. Please try again. \n";
+             window.alert( "Email entries don't match. Please try again" );
+             document.gsForm.email.focus() ;
              document.getElementById('email').style.color="red";
-             document.getElementById('email2').style.color="red";
-             document.gsForm.email.focus();
-             result = false;
-        
+             return false;
+        }
+        if( document.gsForm.email.value === "" ) {
+
+             window.alert( "Please enter your email address!" );
+             document.gsForm.email.focus() ;
+             document.getElementById('username').style.color="red";
+             return false;
 
         }else{
 
@@ -62,26 +55,22 @@ function validate() {
             var ret = validateEmail();
             if( ret === false ) {
 
-                  result = false;
+                  return false;
 
              }
         }
 
 
-        if( document.gsForm.organization.value === "-1" ) {
+       if( document.gsForm.organization.value === "-1" ) {
 
-        msg += "Please enter your organization!";
-        document.gsForm.organization.focus();
-        document.getElementById('organization').style.color="red";
-        result = false;
+         window.alert( "Please enter your organization!" );
+         document.gsForm.organization.focus() ;
+         document.getElementById('organization').style.color="red";
+         return false;
 
-        }
+       }
 
-        if(result === false){
-            window.alert(msg);
-        }else{
-            savelocal();
-        }
+        savelocal();
     }
 }
 
@@ -93,11 +82,9 @@ function validateEmail() {
    var dotpos = emailID.lastIndexOf(".");
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
-        msg += "Please enter a correct email address. \n";
-        document.getElementById('email').style.color="red";
-        document.getElementById('email2').style.color="red";
-        result = false;
-        return result;
+       window.alert("Please enter a correct email address");
+       document.gsForm.email.focus() ;
+       return false;
 
    }
 
