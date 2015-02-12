@@ -32,18 +32,16 @@ function validate() {
 
              window.alert( "Please enter your full name!" );
              window.location.hash = "govscore";
-             return false;
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
              window.alert( "Email entries don't match. Please try again" );
-             window.location.hash = "govscore";
-             return false;
+             document.gsForm.email.focus() ;
         }
         if( document.gsForm.email.value === "" ) {
 
              window.alert( "Please enter your email address!" );
-             window.location.hash = "govscore";
+             document.gsForm.email.focus() ;
              return false;
 
         }else{
@@ -61,7 +59,7 @@ function validate() {
        if( document.gsForm.organization.value === "-1" ) {
 
          window.alert( "Please enter your organization!" );
-         window.location.hash = "govscore";
+         document.gsForm.organization.focus() ;
          return false;
 
        }
