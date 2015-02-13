@@ -182,7 +182,7 @@ function getinputs(answerset,num1,num2,prefix){
 
 
 //save the json data array to the server via ajax call
-function saveToServer(address,dataset,datasaved){
+function saveToDb(address,dataset,datasaved){
             $.ajax({
             type       : "GET",
             url        : address,
@@ -251,7 +251,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, gsSaved);
+    saveToDb("http://sensi.wpengine.com/store-gs.php", gsdata, gsIsSaved);
 
 }
 
@@ -289,7 +289,7 @@ function ag1savelocal() {
 function ag1saveServer() {
           
     ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
+    saveToDb("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
         
 }
 
@@ -326,7 +326,7 @@ function ag2savelocal() {
 function ag2saveServer() {
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, ag2Saved);
+    saveToDb("http://sensi.wpengine.com/store-ag.php", ag2data, ag2Saved);
         
 }
 
@@ -365,7 +365,7 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
+    saveToDb("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
 
 }
 
@@ -404,7 +404,7 @@ function ag4savelocal() {
 function ag4saveServer() {
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
+    saveToDb("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
 
 }
 
@@ -442,7 +442,7 @@ function ag5savelocal() {
 function ag5saveServer() {
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
+    saveToDb("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
 
     
 } 
@@ -453,7 +453,7 @@ function ag5saveServer() {
 //check if online according to the above interval
 function onOnline() {
     //there must be locally saved data and the saved flag must be false
-    if( gsdata && gsSaved == false){
+    if( gsdata && gsIsSaved == false){
         saveServer();
     }
     if( ag1data && ag1Saved == false){
