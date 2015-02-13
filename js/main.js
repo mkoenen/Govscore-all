@@ -20,6 +20,19 @@ function setbutton() {
     
 }
 
+$(document).on("pageshow", "#govscore", function() {
+ 
+ 
+    $.validator.addMethod("emailmatch", function(value) {
+            return value == $("#email").val();
+    }, 'Confirmation password must match.');
+ 
+    $("#gsForm").validate();
+ 
+});
+
+
+
 /* Form Validation -------------------------------------*/
 
 function validate() {
@@ -28,52 +41,54 @@ function validate() {
         alreadySaved();
 
     }else{
-        if( document.gsForm.username.value === "" ) {
-
-             window.alert( "Please enter your full name!" );
-             window.location.hash = "govscore";
-             document.gsForm.username.focus() ;
-             document.getElementById('username').style.color="red";
-             return false;
-        }
-        if( document.gsForm.email.value !== document.gsForm.email2.value ) {
-
-             window.alert( "Email entries don't match. Please try again" );
-             window.location.hash = "govscore";
-             document.gsForm.email.focus() ;
-             document.getElementById('email').style.color="red";
-             document.getElementById('email2').style.color="red";
-             return false;
-        }
-        if( document.gsForm.email.value === "" ) {
-
-             window.alert( "Please enter your email address!" );
-             window.location.hash = "govscore";
-             document.gsForm.email.focus() ;
-             document.getElementById('username').style.color="red";
-             return false;
-
-        }else{
-
-            // Put extra check for data format
-            var ret = validateEmail();
-            if( ret === false ) {
-
-                  return false;
-
-             }
-        }
 
 
-       if( document.gsForm.organization.value === "-1" ) {
+       //  if( document.gsForm.username.value === "" ) {
 
-         window.alert( "Please enter your organization!" );
-         window.location.hash = "govscore";
-         document.gsForm.organization.focus() ;
-         document.getElementById('organization').style.color="red";
-         return false;
+       //       window.alert( "Please enter your full name!" );
+       //       window.location.hash = "govscore";
+       //       document.gsForm.username.focus() ;
+       //       document.getElementById('username').style.color="red";
+       //       return false;
+       //  }
+       //  if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
-       }
+       //       window.alert( "Email entries don't match. Please try again" );
+       //       window.location.hash = "govscore";
+       //       document.gsForm.email.focus() ;
+       //       document.getElementById('email').style.color="red";
+       //       document.getElementById('email2').style.color="red";
+       //       return false;
+       //  }
+       //  if( document.gsForm.email.value === "" ) {
+
+       //       window.alert( "Please enter your email address!" );
+       //       window.location.hash = "govscore";
+       //       document.gsForm.email.focus() ;
+       //       document.getElementById('username').style.color="red";
+       //       return false;
+
+       //  }else{
+
+       //      // Put extra check for data format
+       //      var ret = validateEmail();
+       //      if( ret === false ) {
+
+       //            return false;
+
+       //       }
+       //  }
+
+
+       // if( document.gsForm.organization.value === "-1" ) {
+
+       //   window.alert( "Please enter your organization!" );
+       //   window.location.hash = "govscore";
+       //   document.gsForm.organization.focus() ;
+       //   document.getElementById('organization').style.color="red";
+       //   return false;
+
+       // }
 
         savelocal();
     }

@@ -40,6 +40,10 @@ label.ui-btn img {
 #organization-button {
 	padding: .7em .4em;
 }
+label.error { 
+	color: #F00;
+	padding-left: 1%;
+}
 /*.questions {
 	display: none;
 }*/
