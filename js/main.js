@@ -180,9 +180,10 @@ function getinputs(answerset,num1,num2,prefix){
     return answerset;
 }
 
+var gsSaved = false, ag1Saved = false, ag2Saved = false, ag3Saved = false, ag4Saved = false, ag5Saved = false;
 
 //save the json data array to the server via ajax call
-function saveToDb(address,dataset,datasaved){
+function saveToServer(address,dataset,datasaved){
             $.ajax({
             type       : "GET",
             url        : address,
@@ -251,7 +252,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToDb("http://sensi.wpengine.com/store-gs.php", gsdata, gsIsSaved);
+    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, gsSaved);
 
 }
 
@@ -289,7 +290,7 @@ function ag1savelocal() {
 function ag1saveServer() {
           
     ag1data = localStorage.getObject('ag1data');
-    saveToDb("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
         
 }
 
@@ -326,7 +327,7 @@ function ag2savelocal() {
 function ag2saveServer() {
  
     ag2data = localStorage.getObject('ag2data');
-    saveToDb("http://sensi.wpengine.com/store-ag.php", ag2data, ag2Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, ag2Saved);
         
 }
 
@@ -365,7 +366,7 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     ag3data = localStorage.getObject('ag3data');
-    saveToDb("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
 
 }
 
@@ -404,7 +405,7 @@ function ag4savelocal() {
 function ag4saveServer() {
     
     ag4data = localStorage.getObject('ag4data');
-    saveToDb("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
 
 }
 
@@ -442,7 +443,7 @@ function ag5savelocal() {
 function ag5saveServer() {
 
     ag5data = localStorage.getObject('ag5data');
-    saveToDb("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
 
     
 } 
@@ -453,7 +454,7 @@ function ag5saveServer() {
 //check if online according to the above interval
 function onOnline() {
     //there must be locally saved data and the saved flag must be false
-    if( gsdata && gsIsSaved == false){
+    if( gsdata && gsSaved == false){
         saveServer();
     }
     if( ag1data && ag1Saved == false){
