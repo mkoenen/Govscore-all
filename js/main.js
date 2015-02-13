@@ -31,6 +31,7 @@ function validate() {
         if( document.gsForm.username.value === "" ) {
 
              window.alert( "Please enter your full name!" );
+             window.location.hash = "govscore";
              document.gsForm.username.focus() ;
              document.getElementById('username').style.color="red";
              return false;
@@ -38,13 +39,16 @@ function validate() {
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
              window.alert( "Email entries don't match. Please try again" );
+             window.location.hash = "govscore";
              document.gsForm.email.focus() ;
              document.getElementById('email').style.color="red";
+             document.getElementById('email2').style.color="red";
              return false;
         }
         if( document.gsForm.email.value === "" ) {
 
              window.alert( "Please enter your email address!" );
+             window.location.hash = "govscore";
              document.gsForm.email.focus() ;
              document.getElementById('username').style.color="red";
              return false;
@@ -64,6 +68,7 @@ function validate() {
        if( document.gsForm.organization.value === "-1" ) {
 
          window.alert( "Please enter your organization!" );
+         window.location.hash = "govscore";
          document.gsForm.organization.focus() ;
          document.getElementById('organization').style.color="red";
          return false;
@@ -83,7 +88,9 @@ function validateEmail() {
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
        window.alert("Please enter a correct email address");
+       window.location.hash = "govscore";
        document.gsForm.email.focus() ;
+       document.getElementById('email').style.color="red";
        return false;
 
    }
