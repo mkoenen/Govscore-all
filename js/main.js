@@ -26,6 +26,12 @@ $(document).on("pageshow", "#govscore", function() {
     $.validator.addMethod("emailmatch", function(value) {
             return value == $("#email").val();
     }, 'Confirmation password must match.');
+
+    $.validator.addMethod("emaildot", function(value) {
+        var atpos = value.indexOf("@");
+        var dotpos = value.lastIndexOf(".");
+            return dotpos - atpos >1;
+    }, 'Email must be valid.');
  
     $("#gsForm").validate();
  
