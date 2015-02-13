@@ -11,7 +11,7 @@ window.onload = function(){
  //listen for click events      
 function setbutton() {
 
-    document.getElementById('btnStore').addEventListener('click', validate, false);
+    document.getElementById('btnStore').addEventListener('click', savelocal, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
     document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
@@ -19,6 +19,12 @@ function setbutton() {
     document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
     
 }
+
+
+
+
+
+/* Form Validation -------------------------------------*/
 
 $(document).on("pageshow", "#govscore", function() {
  
@@ -37,88 +43,6 @@ $(document).on("pageshow", "#govscore", function() {
  
 });
 
-
-
-/* Form Validation -------------------------------------*/
-
-function validate() {
-    if(gsdata){
-
-        alreadySaved();
-
-    }else{
-
-
-       //  if( document.gsForm.username.value === "" ) {
-
-       //       window.alert( "Please enter your full name!" );
-       //       window.location.hash = "govscore";
-       //       document.gsForm.username.focus() ;
-       //       document.getElementById('username').style.color="red";
-       //       return false;
-       //  }
-       //  if( document.gsForm.email.value !== document.gsForm.email2.value ) {
-
-       //       window.alert( "Email entries don't match. Please try again" );
-       //       window.location.hash = "govscore";
-       //       document.gsForm.email.focus() ;
-       //       document.getElementById('email').style.color="red";
-       //       document.getElementById('email2').style.color="red";
-       //       return false;
-       //  }
-       //  if( document.gsForm.email.value === "" ) {
-
-       //       window.alert( "Please enter your email address!" );
-       //       window.location.hash = "govscore";
-       //       document.gsForm.email.focus() ;
-       //       document.getElementById('username').style.color="red";
-       //       return false;
-
-       //  }else{
-
-       //      // Put extra check for data format
-       //      var ret = validateEmail();
-       //      if( ret === false ) {
-
-       //            return false;
-
-       //       }
-       //  }
-
-
-       // if( document.gsForm.organization.value === "-1" ) {
-
-       //   window.alert( "Please enter your organization!" );
-       //   window.location.hash = "govscore";
-       //   document.gsForm.organization.focus() ;
-       //   document.getElementById('organization').style.color="red";
-       //   return false;
-
-       // }
-
-        savelocal();
-    }
-}
-
-
-function validateEmail() {
-
-   var emailID = document.gsForm.email.value;
-   var atpos = emailID.indexOf("@");
-   var dotpos = emailID.lastIndexOf(".");
-   if (atpos < 1 || ( dotpos - atpos < 2 )) {
-
-       window.alert("Please enter a correct email address");
-       window.location.hash = "govscore";
-       document.gsForm.email.focus() ;
-       document.getElementById('email').style.color="red";
-       return false;
-
-   }
-
-   return( true );
-
-}
 
 /* Notifications ----------------------------------*/
 var organization;
@@ -256,23 +180,31 @@ var ag5data = localStorage.getObject('ag5data');
 /* store locally */
 function savelocal() {
 
-    var userdata, email, gsdate, username, organization;
+    if(gsdata){
 
-    username = document.getElementById("username").value;
-    email = document.getElementById("email").value;
-    organization = document.getElementById("organization").value;
-    gsdate  = formatDate(new Date());
+        alreadySaved();
 
-    //construct the json array for user data and add to local storage
-    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
-    gsdata = getinputs(gsdata,1,25,"g");
-    localStorage.setObject('gsdata', gsdata);
-    
-    calcResults();
+    }else{
 
-    //now that everything is saved, check the connection
-    checkConnection( "cgovscore");
+         var userdata, email, gsdate, username, organization;
+
+        username = document.getElementById("username").value;
+        email = document.getElementById("email").value;
+        organization = document.getElementById("organization").value;
+        gsdate  = formatDate(new Date());
+
+        //construct the json array for user data and add to local storage
+        gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
+        gsdata = getinputs(gsdata,1,25,"g");
+        localStorage.setObject('gsdata', gsdata);
+        
+        calcResults();
+
+        //now that everything is saved, check the connection
+        checkConnection( "cgovscore");
+    }
 }
+
 
 /* save to server */
 
