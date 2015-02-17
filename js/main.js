@@ -193,21 +193,11 @@ function checkConnection(whichfunction) {
 
 /* Functions for processing data -----------------------------------------------*/
 
-if (window.Storage) {
-
-Storage.prototype.setObject = function(key, value) {
-    this.setItem(key, JSON.stringify(value));
+function storeObject(key,obj) {
+    localStorage[key] = JSON.stringify(obj);
 }
- 
-Storage.prototype.getObject = function(key) {
-    try {
-        return JSON.parse(this.getItem(key));
-    }
-    catch(e) {
-        return null;
-    }
-}
-
+function retrieveObject(key) {
+    return JSON.parse(localStorage[key]);
 }
 
 //get answers from form and build json array
@@ -275,7 +265,7 @@ function savelocal() {
     //construct the json array for user data and add to local storage
     gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
     gsdata = getinputs(gsdata,1,25,"g");
-    window.localStorage.setObject('gsdata', gsdata);
+    storeObject('gsdata', gsdata);
     
     calcResults();
 
