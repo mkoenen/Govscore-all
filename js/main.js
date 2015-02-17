@@ -193,13 +193,21 @@ function checkConnection(whichfunction) {
 
 /* Functions for processing data -----------------------------------------------*/
 
+if (window.Storage) {
+
 Storage.prototype.setObject = function(key, value) {
     this.setItem(key, JSON.stringify(value));
 }
-
+ 
 Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
-    return value && JSON.parse(value);
+    try {
+        return JSON.parse(this.getItem(key));
+    }
+    catch(e) {
+        return null;
+    }
+}
+
 }
 
 //get answers from form and build json array
@@ -313,7 +321,7 @@ function ag1savelocal() {
         ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
         ag1data = getinputs(ag1data,1,24,"ag");
 
-        localStorage.setObject('ag1data', ag1data);
+        window.localStorage.setObject('ag1data', ag1data);
 
         calcResults()
         //now that everything is saved check the connection
