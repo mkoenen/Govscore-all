@@ -27,6 +27,7 @@ function setbutton() {
 function hideResultsButtons() {
     
     if( !gsdata ){
+        window.alert(gsdata);
         /*var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";*/
         var resultButton2 = document.getElementById('govscore-results2');
