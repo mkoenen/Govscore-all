@@ -524,7 +524,8 @@ function showResultsButtons() {
     window.alert("ready to see if we have data");
     window.alert("what is hapening before?");
     gsdata = retrieveObject('gsdata');
-
+    window.alert("what is hapening after getting gsdata?");
+    window.alert(gsdata);
     ag1data = retrieveObject('ag1data');
     ag2data = retrieveObject('ag2data');
     ag3data = retrieveObject('ag3data');
