@@ -4,8 +4,9 @@ window.onload = function(){
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", showResultsButtons, false);
+    //document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("resume", showResultsButtons, true); 
 };
 
 //listen for click events      
@@ -206,9 +207,7 @@ function saveToServer(address,dataset,datasaved){
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData) {
-                        
-                        //window.location.hash = "govscore-results";
-                        //afterSavedServer("Govscore", organization);
+                        return false;
                         localStorage.setItem(datasaved, "true");
                         showResultsButtons();
                         navigator.notification.alert(responseData, goTo(), "Update", "OK");
