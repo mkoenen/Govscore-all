@@ -207,11 +207,9 @@ function saveToServer(address,dataset,datasaved){
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData) {
-                        return false;
+                        navigator.notification.alert(responseData, goTo(), "Update", "OK");
                         localStorage.setItem(datasaved, "true");
                         showResultsButtons();
-                        navigator.notification.alert(responseData, goTo(), "Update", "OK");
-                        
                         },
             error      : function(response) {
                         navigator.notification.alert(responseData);                
@@ -564,9 +562,12 @@ function showResultsButtons() {
 
 /* Results -----------------*/
 function showResults(){
+    window.alert("Hello, I'm ready for results");
     var storedResult = localStorage.getItem("result");
     if(storedResult){
         document.getElementById('gs-results').innerHTML = storedResult;
+    }else{
+        document.getElementById('gs-results').innerHTML = "Please complete the initial Govscore assessment first.";
     }
 } 
 
