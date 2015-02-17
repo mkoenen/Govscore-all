@@ -275,7 +275,7 @@ function savelocal() {
     //construct the json array for user data and add to local storage
     gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
     gsdata = getinputs(gsdata,1,25,"g");
-    localStorage.setObject('gsdata', gsdata);
+    window.localStorage.setObject('gsdata', gsdata);
     
     calcResults();
 
