@@ -56,7 +56,7 @@
                 <a href="#govscore-results" id="govscore-results2" class="ui-btn">See Your Results</a>
                 
                 <form name="gsForm" id="gsForm"> 
-                    <label for="username" class="ui-hidden-accessible">Name</label>
+                    <!--<label for="username" class="ui-hidden-accessible">Name</label>
                         <input type="text" id="username" name="username" placeholder="First name followed by surname" class="required" minlength="5" />
 
                     <label for="email" class="ui-hidden-accessible">Email</label>
@@ -66,6 +66,23 @@
 
                     <label for="organization" class="select ui-hidden-accessible">Organization</label>
                         <select name="organization" id="organization" class="required">
+                            <option value="">Select Your Organization</option>
+                            <option value="1111">First Organization</option>
+                            <option value="2222">Second Organization</option>
+                            <option value="3333">Third Organization</option>
+                            <option value="4444">Fourth Organization</option>
+                        </select>-->
+
+                    <label for="username" class="ui-hidden-accessible">Name</label>
+                        <input type="text" id="username" name="username" placeholder="First name followed by surname" required />
+
+                    <label for="email" class="ui-hidden-accessible">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required />
+                    <label for="email2" class="ui-hidden-accessible">Confirm Email</label>
+                        <input type="email" id="email2" name="email2" placeholder="Enter Email Again" required />
+
+                    <label for="organization" class="select ui-hidden-accessible">Organization</label>
+                        <select name="organization" id="organization">
                             <option value="-1">Select Your Organization</option>
                             <option value="1111">First Organization</option>
                             <option value="2222">Second Organization</option>
