@@ -522,14 +522,16 @@ function onOnline(event) {
 
 function showResultsButtons() {
     window.alert("ready to see if we have data");
+    window.alert("what is hapening before?");
     gsdata = retrieveObject('gsdata');
+
     ag1data = retrieveObject('ag1data');
     ag2data = retrieveObject('ag2data');
     ag3data = retrieveObject('ag3data');
     ag4data = retrieveObject('ag4data');
     ag5data = retrieveObject('ag5data'); 
-    alert("what is hapening?");
-    alert(gsdata);
+    window.alert("what is hapening?");
+    window.alert(gsdata);
     if( gsdata){
         window.alert("ready to chow buttons");
         /*var gsSaveButton = document.getElementById('btnStore');
