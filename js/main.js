@@ -5,7 +5,7 @@ window.onload = function(){
     document.addEventListener("deviceready", setbuttons, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
-    document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("deviceready", showResults, false);
     //document.addEventListener("resume", showResultsButtons, true); 
 };
 
@@ -563,6 +563,12 @@ function showResultsButtons() {
 }
 
 /* Results -----------------*/
+function showResults(){
+    var storedResult = localStorage.getItem("result");
+    if(storedResult){
+        document.getElementById('gs-results').innerHTML = storedResult;
+    }
+} 
 
 /*Questions 1, 3, 11, 15, 16, and 22 are based on the practice of cultivating accountability.
 Questions 6, 12 and 17 are based on the practice of engaging stakeholders.
@@ -670,7 +676,7 @@ function calcResults() {
             res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16</p></div>";
         }
     }
-
+    localStorage.setItem("result", res);
     document.getElementById('gs-results').innerHTML = res; 
 }
 
