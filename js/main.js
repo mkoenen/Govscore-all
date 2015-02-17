@@ -1,12 +1,11 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
-    //window.setTimeout(beonline, 6000);
-    document.addEventListener("online", showResultsButtons, true);                               //limit how fast the online event can fire
+
+    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
-    document.addEventListener("resume", showResultsButtons, false);
 };
 
 //listen for click events      
@@ -482,24 +481,11 @@ function ag5saveServer() {
 
 
 /* App Comes Online ------------------------------------------*/
-function onResume(){
-    if(gsdata){
-        showResultsButtons();
-        calcResults();
-    }else{
-        //nothing to do
-    }
-}
+
 
 //check if coming online while app is open
 function onOnline(event) {
-    //have links to results and results
-    if(gsdata){
-        showResultsButtons();
-        calcResults();
-    }else{
-        //nothing to do
-    }
+
 
     //there must be locally saved data and the saved flag must be false
     gsSaved = localStorage.getItem("gsSaved");
@@ -536,7 +522,13 @@ function onOnline(event) {
 /* Interface changes -----------------------------------------*/ 
 
 function showResultsButtons() {
-   gsdata = retrieveObject('gsdata'); 
+
+    gsdata = retrieveObject('gsdata');
+    ag1data = retrieveObject('ag1data');
+    ag2data = retrieveObject('ag2data');
+    ag3data = retrieveObject('ag3data');
+    ag4data = retrieveObject('ag4data');
+    ag5data = retrieveObject('ag5data'); 
     
     if( gsdata){
         window.alert("ready to chow buttons");
