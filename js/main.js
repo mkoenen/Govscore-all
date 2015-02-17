@@ -526,6 +526,13 @@ function showResultsButtons() {
     gsdata = retrieveObject('gsdata');
     window.alert("what is hapening after getting gsdata?");
     window.alert(gsdata);
+    if( gsdata){
+        window.alert("ready to chow buttons");
+        /*var gsSaveButton = document.getElementById('btnStore');
+        gsSaveButton.className = gsSaveButton.className + " hide";*/
+        var resultButton2 = document.getElementById('govscore-results2');
+        resultButton2.className = resultButton2.className + " see";
+    }
     ag1data = retrieveObject('ag1data');
     ag2data = retrieveObject('ag2data');
     ag3data = retrieveObject('ag3data');
