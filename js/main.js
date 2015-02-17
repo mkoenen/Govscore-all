@@ -6,7 +6,7 @@ window.onload = function(){
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
-    document.addEventListener("resume", showResultsButtons, true); 
+    //document.addEventListener("resume", showResultsButtons, true); 
 };
 
 //listen for click events      
