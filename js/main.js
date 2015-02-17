@@ -540,7 +540,7 @@ function showResultsButtons() {
     if( gsdata){
         /*var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";*/
-        var resultButton2 = document.getElementById('govscore-results2');
+        var resultButton2 = document.getElementById('govscore-results');
         resultButton2.className = resultButton2.className + " see";
     }
     
@@ -649,7 +649,7 @@ function calcResults() {
         res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p></div>";
         res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p></div>";
         res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
+        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the organization code " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
         //document.getElementById('gs-results').innerHTML = res;
         
     }
