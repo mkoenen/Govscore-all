@@ -489,22 +489,22 @@ function onOnline() {
     window.alert("online event fired after list");
     window.alert(gsdata);
 
-    if( gsdata && gsSaved === false){
+    if( gsdata && gsSaved === null){
         saveServer();
     }
-    if( ag1data && ag1Saved === false){
+    if( ag1data && ag1Saved === null){
         ag1saveServer();
     } 
-    if( ag2data && ag2Saved === false){
+    if( ag2data && ag2Saved === null){
         ag2saveServer();
     }
-    if( ag3data && ag3Saved === false){
+    if( ag3data && ag3Saved === null){
         ag3saveServer(); 
     }
-    if( ag4data && ag4Saved === false) {
+    if( ag4data && ag4Saved === null) {
         ag4saveServer();
     }
-    if( ag5data && ag5Saved === false){
+    if( ag5data && ag5Saved === null){
         ag5saveServer();
     }else{
         return false;
