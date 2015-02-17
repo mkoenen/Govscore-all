@@ -6,11 +6,7 @@ window.onload = function(){
     document.addEventListener("deviceready", setbuttons, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
-    document.addEventListener("deviceready", whatever, false);
 };
-function whatever(){
-    window.alert("whatever");
-}
 
 //listen for click events      
 function setbuttons() {
@@ -98,20 +94,16 @@ function validateEmail() {
 }
 
 /* Notifications ----------------------------------*/
-var organization = gsdata.answers[organization];
+//var organization = gsdata.answers[organization];
 
 function messageAfterSaveLocal() {
-    window.alert('Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.');
-}
-
-
-function afterSavedServer(form, orgcode) {
-
-    window.alert('Your answers to the questionnaire ' + form + ' have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.');
+    var saveLocal = 'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.';
+    navigator.notification.alert(saveLocal, goTo(), "Update", "OK");
 }
 
 function alreadySaved() {
-    window.alert('You previously finished this assessment. Please check your results.');
+    var alSaved = 'You previously finished this assessment. Please check your results.';
+    navigator.notification.alert(alSaved, goTo(), "Update", "OK");
 }
 
 function goTo(){
@@ -236,7 +228,7 @@ var ag5data = retrieveObject('ag5data');
 /* store locally */
 function savelocal() {
 
-    var userdata, email, gsdate, username;
+    var userdata, email, gsdate, username, organization;
 
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
@@ -564,10 +556,9 @@ function showResultsButtons() {
 }
 
 /* Results -----------------*/
-
+//display previous results saved in local storage
 function showResults(){
 
-    window.alert("Hello, I'm ready for results");
     var storedResult = localStorage.getItem("result");
 
     if(storedResult){
