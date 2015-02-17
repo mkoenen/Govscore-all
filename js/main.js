@@ -8,10 +8,10 @@ window.onload = function(){
     document.addEventListener("deviceready", calcResults, false);
 };
 
- //listen for click events      
+//listen for click events      
 function setbutton() {
 
-    document.getElementById('btnStore').addEventListener('click', savelocal, false);
+    document.getElementById('btnStore').addEventListener('click', validate, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
     document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
@@ -20,29 +20,97 @@ function setbutton() {
     
 }
 
-
-
-
-
 /* Form Validation -------------------------------------*/
 
-$(document).on("pageshow", "#govscore", function() {
+// $(document).on("pageshow", "#govscore", function() {
  
  
-    $.validator.addMethod("emailmatch", function(value) {
-            return value == $("#email").val();
-    }, 'Confirmation password must match.');
+//     $.validator.addMethod("emailmatch", function(value) {
+//             return value == $("#email").val();
+//     }, 'Confirmation password must match.');
 
-    $.validator.addMethod("emaildot", function(value) {
-        var atpos = value.indexOf("@");
-        var dotpos = value.lastIndexOf(".");
-            return dotpos - atpos >1;
-    }, 'Email must be valid.');
+//     $.validator.addMethod("emaildot", function(value) {
+//         var atpos = value.indexOf("@");
+//         var dotpos = value.lastIndexOf(".");
+//             return dotpos - atpos >1;
+//     }, 'Email must be valid.');
  
-    $("#gsForm").validate();
+//     $("#gsForm").validate();
  
-});
+// });
 
+
+function validate(event) {
+    if(gsdata){
+
+        alreadySaved();
+
+    }else{
+        if( document.gsForm.username.value === "" ) {
+
+             navigator.notification.alert( "Please enter your full name!" );
+             document.gsForm.username.focus();
+             event.preventDefault();
+             return false;
+             
+        }
+        if( document.gsForm.email.value !== document.gsForm.email2.value ) {
+
+            navigator.notification.alert( "Email entries don't match. Please try again" );
+            document.gsForm.email.focus();
+            event.preventDefault();
+            return false;
+            
+        }
+
+        if( document.gsForm.email.value === "" ) {
+
+            navigator.notification.alert( "Please enter your email address!" );
+            document.gsForm.email.focus();
+            event.preventDefault();
+            return false;
+
+        }else{
+
+            // Put extra check for data format
+            var ret = validateEmail();
+            if( ret === false ) {
+                event.preventDefault();
+                return false;
+
+             }
+        }
+
+
+       if( document.gsForm.organization.value === "-1" ) {
+
+         navigator.notification.alert( "Please enter your organization!" );
+         document.gsForm.organization.focus();
+         event.preventDefault();
+         return false;
+       }
+
+        savelocal();
+    }
+}
+
+
+function validateEmail() {
+
+   var emailID = document.gsForm.email.value;
+   var atpos = emailID.indexOf("@");
+   var dotpos = emailID.lastIndexOf(".");
+   if (atpos < 1 || ( dotpos - atpos < 2 )) {
+
+       navigator.notification.alert("Please enter a correct email address");
+       document.gsForm.email.focus();
+       event.preventDefault();
+       return false;
+   }
+
+   return( true );
+
+}
 
 /* Notifications ----------------------------------*/
 var organization = gsdata.answers[organization];
@@ -61,6 +129,9 @@ function alreadySaved() {
     window.alert('You previously finished this assessment. Please check your results.');
 }
 
+function goTo(){
+    window.location.hash = "govscore-results";
+}
 
 /* Get Date --------------------------------------------------*/
 
@@ -144,7 +215,7 @@ function getinputs(answerset,num1,num2,prefix){
     return answerset;
 }
 
-var gsSaved = false, ag1Saved = false, ag2Saved = false, ag3Saved = false, ag4Saved = false, ag5Saved = false;
+var gsSaved = "false", ag1Saved = "false", ag2Saved = "false", ag3Saved = "false", ag4Saved = "false", ag5Saved = "false";
 
 //save the json data array to the server via ajax call
 function saveToServer(address,dataset,datasaved){
@@ -155,21 +226,26 @@ function saveToServer(address,dataset,datasaved){
             data       : dataset,
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                    alert(responseData + ", " + textStatus + ", " + jqXHR);
-                        window.location.hash = "govscore-results";
-                        afterSavedServer("Govscore", organization);
-                        datasaved = true; 
+            success    : function(responseData) {
+                        
+                        //window.location.hash = "govscore-results";
+                        //afterSavedServer("Govscore", organization);
+                        localStorage.setItem(datasaved, "true");
                         showResultsButtons();
+                        navigator.notification.alert(responseData, goTo(), "Update", "OK");
+                        
                         },
             error      : function(response) {
-                        alert(response);                  
-                        }  
-            });  
+                        navigator.notification.alert(responseData);                
+                         } 
+                         
+            });
+            
         }
 
 
 /* Initial Govscore -----------------------------------------------*/
+
 
 var gsdata = localStorage.getObject('gsdata'); 
 var ag1data = localStorage.getObject('ag1data');
@@ -177,35 +253,27 @@ var ag2data = localStorage.getObject('ag2data');
 var ag3data = localStorage.getObject('ag3data');
 var ag4data = localStorage.getObject('ag4data');
 var ag5data = localStorage.getObject('ag5data');
-
+ 
 /* store locally */
 function savelocal() {
 
-    if(gsdata){
+    var userdata, email, gsdate, username;
 
-        alreadySaved();
+    username = document.getElementById("username").value;
+    email = document.getElementById("email").value;
+    organization = document.getElementById("organization").value;
+    gsdate  = formatDate(new Date());
 
-    }else{
+    //construct the json array for user data and add to local storage
+    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
+    gsdata = getinputs(gsdata,1,25,"g");
+    localStorage.setObject('gsdata', gsdata);
+    
+    calcResults();
 
-         var userdata, email, gsdate, username, organization;
-
-        username = document.getElementById("username").value;
-        email = document.getElementById("email").value;
-        organization = document.getElementById("organization").value;
-        gsdate  = formatDate(new Date());
-
-        //construct the json array for user data and add to local storage
-        gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
-        gsdata = getinputs(gsdata,1,25,"g");
-        localStorage.setObject('gsdata', gsdata);
-        
-        calcResults();
-
-        //now that everything is saved, check the connection
-        checkConnection( "cgovscore");
-    }
+    //now that everything is saved, check the connection
+    checkConnection( "cgovscore");
 }
-
 
 /* save to server */
 
@@ -216,7 +284,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, gsSaved);
+    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, "gsSaved");
 
 }
 
@@ -229,6 +297,10 @@ function ag1savelocal() {
     if(ag1data){
 
         alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
@@ -254,7 +326,7 @@ function ag1savelocal() {
 function ag1saveServer() {
           
     ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, "ag1Saved");
         
 }
 
@@ -266,6 +338,10 @@ function ag2savelocal() {
     if(ag2data){
 
         alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
@@ -291,7 +367,7 @@ function ag2savelocal() {
 function ag2saveServer() {
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, ag2Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, "ag2Saved");
         
 }
 
@@ -304,6 +380,10 @@ function ag3savelocal() {
     if(ag3data){
 
         alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
@@ -330,7 +410,7 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, "ag3Saved");
 
 }
 
@@ -343,6 +423,10 @@ function ag4savelocal() {
     if(ag4data){
 
         alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
@@ -369,7 +453,7 @@ function ag4savelocal() {
 function ag4saveServer() {
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, "ag4Saved");
 
 }
 
@@ -382,6 +466,10 @@ function ag5savelocal() {
     if(ag5data){
 
         alert("You have already finished this assessment");
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
@@ -407,7 +495,7 @@ function ag5savelocal() {
 function ag5saveServer() {
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, "ag5Saved");
 
     
 } 
@@ -416,26 +504,35 @@ function ag5saveServer() {
 /* App Comes Online ------------------------------------------*/
 
 //check if online according to the above interval
-function onOnline() {
+function onOnline(event) {
     //there must be locally saved data and the saved flag must be false
-    if( gsdata && gsSaved == false){
+    gsSaved = localStorage.getItem("gsSaved");
+    ag1Saved = localStorage.getItem("ag1Saved");
+    ag2Saved = localStorage.getItem("ag2Saved");
+    ag3Saved = localStorage.getItem("ag3Saved");
+    ag4Saved = localStorage.getItem("ag4Saved");
+    ag5Saved = localStorage.getItem("ag5Saved");
+
+    if( gsdata && gsSaved === false){
         saveServer();
     }
-    if( ag1data && ag1Saved == false){
+    if( ag1data && ag1Saved === false){
         ag1saveServer();
     } 
-    if( ag2data && ag2Saved == false){
+    if( ag2data && ag2Saved === false){
         ag2saveServer();
     }
-    if( ag3data && ag3Saved == false){
+    if( ag3data && ag3Saved === false){
         ag3saveServer(); 
     }
-    if( ag4data && ag4Saved == false) {
+    if( ag4data && ag4Saved === false) {
         ag4saveServer();
     }
-    if( ag5data && ag5Saved == false){
+    if( ag5data && ag5Saved === false){
         ag5saveServer();
-    } 
+    }else{
+        return false;
+    }
 }
 
 /* Interface changes -----------------------------------------*/ 
