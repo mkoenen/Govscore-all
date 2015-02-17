@@ -528,7 +528,8 @@ function showResultsButtons() {
     ag3data = retrieveObject('ag3data');
     ag4data = retrieveObject('ag4data');
     ag5data = retrieveObject('ag5data'); 
-    
+    alert("what is hapening?");
+    alert(gsdata);
     if( gsdata){
         window.alert("ready to chow buttons");
         /*var gsSaveButton = document.getElementById('btnStore');
