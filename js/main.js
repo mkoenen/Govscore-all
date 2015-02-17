@@ -512,6 +512,14 @@ function onResume(){
 
 //check if coming online while app is open
 function onOnline(event) {
+    //have links to results and results
+    if(gsdata){
+        showResultsButtons();
+        calcResults();
+    }else{
+        //nothing to do
+    }
+
     //there must be locally saved data and the saved flag must be false
     gsSaved = localStorage.getItem("gsSaved");
     ag1Saved = localStorage.getItem("ag1Saved");
@@ -519,6 +527,8 @@ function onOnline(event) {
     ag3Saved = localStorage.getItem("ag3Saved");
     ag4Saved = localStorage.getItem("ag4Saved");
     ag5Saved = localStorage.getItem("ag5Saved");
+
+
 
     if( gsdata && gsSaved === false){
         saveServer();
