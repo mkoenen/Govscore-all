@@ -6,6 +6,7 @@ window.onload = function(){
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("resume", onResume, false);
 };
 
 //listen for click events      
@@ -500,8 +501,16 @@ function ag5saveServer() {
 
 
 /* App Comes Online ------------------------------------------*/
+function onResume(){
+    if(gsdata){
+        showResultsButtons();
+        calcResults();
+    }else{
+        //nothing to do
+    }
+}
 
-//check if online according to the above interval
+//check if coming online while app is open
 function onOnline(event) {
     //there must be locally saved data and the saved flag must be false
     gsSaved = localStorage.getItem("gsSaved");
@@ -540,7 +549,7 @@ function showResultsButtons() {
     if( gsdata){
         /*var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";*/
-        var resultButton2 = document.getElementById('govscore-results');
+        var resultButton2 = document.getElementById('govscore-results2');
         resultButton2.className = resultButton2.className + " see";
     }
     
