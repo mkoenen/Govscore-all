@@ -521,61 +521,39 @@ function onOnline(event) {
 /* Interface changes -----------------------------------------*/ 
 
 function showResultsButtons() {
-    window.alert("ready to see if we have data");
-    window.alert("what is hapening before?");
+    
     gsdata = retrieveObject('gsdata');
-    window.alert("what is hapening after getting gsdata?");
-    window.alert(gsdata);
     if( gsdata){
-        window.alert("ready to chow buttons");
-        /*var gsSaveButton = document.getElementById('btnStore');
-        gsSaveButton.className = gsSaveButton.className + " hide";*/
         var resultButton2 = document.getElementById('govscore-results2');
         resultButton2.className = resultButton2.className + " see";
     }
     ag1data = retrieveObject('ag1data');
-    ag2data = retrieveObject('ag2data');
-    ag3data = retrieveObject('ag3data');
-    ag4data = retrieveObject('ag4data');
-    ag5data = retrieveObject('ag5data'); 
-    window.alert("what is hapening?");
-    window.alert(gsdata);
-    if( gsdata){
-        window.alert("ready to chow buttons");
-        /*var gsSaveButton = document.getElementById('btnStore');
-        gsSaveButton.className = gsSaveButton.className + " hide";*/
-        var resultButton2 = document.getElementById('govscore-results2');
-        resultButton2.className = resultButton2.className + " see";
-    }
-    
     if(ag1data){
-      /* var ag1SaveButton = document.getElementById('ag1Store');
-       ag1SaveButton.className = ag1SaveButton.className + " hide";*/
-       var ag1resultButton = document.getElementById('ag1-results');
+        var ag1resultButton = document.getElementById('ag1-results');
         ag1resultButton.className = ag1resultButton.className + " see";
     }
-   
+    ag2data = retrieveObject('ag2data');
     if(ag2data) {
         /*var ag2SaveButton = document.getElementById('ag2Store');
         ag2SaveButton.className = ag2SaveButton.className + " hide";*/
         var ag2resultButton = document.getElementById('ag2-results');
         ag2resultButton.className = ag2resultButton.className + " see";
     }
-    
+    ag3data = retrieveObject('ag3data');
     if(ag3data){
         /*var ag3SaveButton = document.getElementById('ag3Store');
         ag3SaveButton.className = ag3SaveButton.className + " hide";*/
         var ag3resultButton = document.getElementById('ag3-results');
         ag3resultButton.className = ag3resultButton.className + " see";
     }
-     
+    ag4data = retrieveObject('ag4data');
     if( ag4data) {
         /*var ag4SaveButton = document.getElementById('ag4Store');
         ag4SaveButton.className = ag4SaveButton.className + " hide";*/
         var ag4resultButton = document.getElementById('ag4-results');
         ag4resultButton.className = ag4resultButton.className + " see";
     }
-   
+    ag5data = retrieveObject('ag5data');
     if( ag5data){
         /*var ag5SaveButton = document.getElementById('ag5Store');
         ag5SaveButton.className = ag5SaveButton.className + " hide";*/
