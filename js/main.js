@@ -536,6 +536,7 @@ function onOnline(event) {
 /* Interface changes -----------------------------------------*/ 
 
 function showResultsButtons() {
+   gsdata = retrieveObject('gsdata'); 
     
     if( gsdata){
         window.alert("ready to chow buttons");
