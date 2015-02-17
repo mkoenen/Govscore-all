@@ -1,13 +1,16 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
 
-    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
+    document.addEventListener("online", onOnline, true); 
+    document.addEventListener("deviceready", showResults, false);
     document.addEventListener("deviceready", setbuttons, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
-    document.addEventListener("deviceready", showResults, false);
-    //document.addEventListener("resume", showResultsButtons, true); 
+    document.addEventListener("deviceready", whatever, false);
 };
+function whatever(){
+    window.alert("whatever");
+}
 
 //listen for click events      
 function setbuttons() {
@@ -561,15 +564,19 @@ function showResultsButtons() {
 }
 
 /* Results -----------------*/
+
 function showResults(){
+
     window.alert("Hello, I'm ready for results");
     var storedResult = localStorage.getItem("result");
+
     if(storedResult){
         document.getElementById('gs-results').innerHTML = storedResult;
     }else{
         document.getElementById('gs-results').innerHTML = "Please complete the initial Govscore assessment first.";
     }
 } 
+
 
 /*Questions 1, 3, 11, 15, 16, and 22 are based on the practice of cultivating accountability.
 Questions 6, 12 and 17 are based on the practice of engaging stakeholders.
