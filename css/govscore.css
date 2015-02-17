@@ -44,29 +44,14 @@ label.error {
 	color: #F00;
 	padding-left: 1%;
 }
-/*.questions {
+#govscore-results1.hide,
+#govscore-results2.hide,
+#ag1-results.hide,
+#ag2-results.hide, 
+#ag3-results.hide, 
+#ag4-results.hide, 
+#ag5-results.hide  {
 	display: none;
-}*/
-#govscore-results1,
-#govscore-results2,
-#ag1-results,
-#ag2-results, 
-#ag3-results, 
-#ag4-results, 
-#ag5-results {
-	display: none;
-}
-#govscore-results1.see,
-#govscore-results2.see,
-#ag1-results.see,
-#ag2-results.see, 
-#ag3-results.see, 
-#ag4-results.see, 
-#ag5-results.see  {
-	display: block;
-}
-button.hide {
-	display:none;
 }
 .legend {
 	width: 5%;
