@@ -2,7 +2,7 @@
 window.onload = function(){
 
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
-    document.addEventListener("deviceready", setbutton, false);
+    document.addEventListener("deviceready", setbuttons, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
@@ -10,7 +10,7 @@ window.onload = function(){
 };
 
 //listen for click events      
-function setbutton() {
+function setbuttons() {
 
     document.getElementById('btnStore').addEventListener('click', validate, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
@@ -521,7 +521,7 @@ function onOnline(event) {
 /* Interface changes -----------------------------------------*/ 
 
 function showResultsButtons() {
-
+    window.alert("ready to see if we have data");
     gsdata = retrieveObject('gsdata');
     ag1data = retrieveObject('ag1data');
     ag2data = retrieveObject('ag2data');
