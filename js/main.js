@@ -476,8 +476,8 @@ function ag5saveServer() {
 
 
 //check if coming online while app is open
-function onOnline(event) {
-
+function onOnline() {
+    window.alert("online event fired");
 
     //there must be locally saved data and the saved flag must be false
     gsSaved = localStorage.getItem("gsSaved");
@@ -486,8 +486,8 @@ function onOnline(event) {
     ag3Saved = localStorage.getItem("ag3Saved");
     ag4Saved = localStorage.getItem("ag4Saved");
     ag5Saved = localStorage.getItem("ag5Saved");
-
-
+    window.alert("online event fired after list");
+    window.alert(gsdata);
 
     if( gsdata && gsSaved === false){
         saveServer();
