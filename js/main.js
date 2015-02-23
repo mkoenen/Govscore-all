@@ -6,6 +6,7 @@ window.onload = function(){
     document.addEventListener("deviceready", setbuttons, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
+    document.addEventListener("deviceready", onOnline, true);
 };
 
 //listen for click events      
@@ -97,7 +98,7 @@ function validateEmail() {
 //var organization = gsdata.answers[organization];
 
 function messageAfterSaveLocal() {
-    var saveLocal = 'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.';
+    var saveLocal = 'Your answers have been stored on your device. They will be saved to our server when you get reconnected to the internet.';
     navigator.notification.alert(saveLocal, goTo(), "Update", "OK");
 }
 
