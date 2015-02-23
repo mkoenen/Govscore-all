@@ -1,13 +1,19 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
 
-    document.addEventListener("online", onOnline, true); 
+    document.addEventListener("online", onOnline, true);
+    document.addEventListener("deviceready", testalert, true); 
     document.addEventListener("deviceready", showResults, false);
     document.addEventListener("deviceready", setbuttons, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", onOnline, true);
 };
+
+function testalert(){
+    window.alert("testing online");
+    onOnline();
+}
 
 //listen for click events      
 function setbuttons() {
