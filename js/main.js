@@ -106,8 +106,17 @@ function alreadySaved() {
     navigator.notification.alert(alSaved, goTo(), "Update", "OK");
 }
 
+function gsFirst() {
+    var doFirst = 'Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.';
+    navigator.notification.alert(doFirst, goToGs(), "Alert", "OK");
+}
+
 function goTo(){
     window.location.hash = "govscore-results";
+}
+
+function goToGs() {
+    window.location.hash = "govscore";
 }
 
 /* Get Date --------------------------------------------------*/
